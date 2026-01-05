@@ -25,7 +25,7 @@ export const NavigationItems = ({ items }: NavigationItemsProps) => {
                     {item.onPointerDown ? (
                         <button
                             onPointerDown={item.onPointerDown}
-                            className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium text-sm"
+                            className="text-gray-700 hover:text-[#2DBEFF] transition-colors duration-200 font-medium text-sm"
                         >
                             {item.label}
                         </button>
@@ -33,8 +33,8 @@ export const NavigationItems = ({ items }: NavigationItemsProps) => {
                         <Link
                             href={item.href}
                             className={cn(
-                                "text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium text-sm",
-                                pathname === item.href && "text-blue-600 border-b-2 border-blue-600"
+                                "text-gray-700 hover:text-[#2DBEFF] transition-colors duration-200 font-medium text-sm",
+                                pathname === item.href && "text-[#2DBEFF] border-b-2 border-[#2DBEFF]"
                             )}
                         >
                             {item.label}

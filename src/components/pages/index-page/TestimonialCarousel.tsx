@@ -86,7 +86,7 @@ const TestimonialCarousel: React.FC = memo(() => {
 
     return (
         <>
-            <div className="flex flex-col items-center justify-center gap-4 py-12">
+            <div className="flex flex-col items-center justify-center gap-4">
                 <TypographyDescription text="What Our Users Say" target="Users Say" className="text-black max-w-5xl text-center font-semibold text-2xl min-[480px]:text-3xl sm:text-4xl md:text-5xl" />
                 <Typography variant="body" className="text-gray-500 md:text-base max-w-4xl text-center">Discover how hosts and professional cleaners use our platform to simplify scheduling, ensure reliable service, and enjoy secure, stress-free payments.</Typography>
             </div>
@@ -145,8 +145,8 @@ const TestimonialCarousel: React.FC = memo(() => {
                                             </blockquote>
                                             <div className='flex items-center gap-2'>
                                                 <div className='hidden md:flex items-center justify-center'>
-                                                    <div className="w-12 h-12 bg-linear-to-r from-[#BF0A30] to-[#003F91]" />
-                                                    <div className="w-12 h-px bg-linear-to-br from-[#BF0A30] to-[#003F91]" />
+                                                    <div className="w-12 h-12 bg-[#2563EB]" />
+                                                    <div className="w-12 h-px bg-[#2563EB]" />
                                                 </div>
                                                 <div className="space-y-2">
                                                     <motion.h3
@@ -187,7 +187,7 @@ const TestimonialCarousel: React.FC = memo(() => {
                                             disabled={isAnimating}
                                             aria-label="Previous testimonial"
                                             className={cn(
-                                                "bg-linear-to-br from-[#BF0A30] to-[#003F91] disabled:opacity-50 disabled:cursor-not-allowed rounded-full p-4 text-black transition-all duration-300 backdrop-blur-sm hover:scale-105 active:scale-95",
+                                                "bg-[#2563EB] disabled:opacity-50 disabled:cursor-not-allowed rounded-full p-4 text-black transition-all duration-300 backdrop-blur-sm hover:scale-105 active:scale-95",
                                                 isAnimating && "opacity-50 cursor-not-allowed",
                                                 currentIndex > 0 && "bg-transparent border border-[#BF0A30]"
                                             )}
@@ -201,7 +201,7 @@ const TestimonialCarousel: React.FC = memo(() => {
                                             onClick={() => paginate(1)}
                                             disabled={isAnimating}
                                             aria-label="Next testimonial"
-                                            className="bg-linear-to-br from-[#BF0A30] to-[#003F91] disabled:opacity-50 disabled:cursor-not-allowed rounded-full p-4 text-black transition-all duration-300 backdrop-blur-sm hover:scale-105 active:scale-95"
+                                            className="bg-[#2563EB] disabled:opacity-50 disabled:cursor-not-allowed rounded-full p-4 text-black transition-all duration-300 backdrop-blur-sm hover:scale-105 active:scale-95"
                                         >
                                             <ChevronRight className="w-5 h-5 text-white md:w-6 md:h-6" />
                                         </button>

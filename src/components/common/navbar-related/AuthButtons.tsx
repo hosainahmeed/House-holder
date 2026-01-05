@@ -12,7 +12,7 @@ export const AuthButtons = () => {
                 <motion.button
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className={cn("px-6 py-2 rounded border", "bg-white text-[#BF0A30] border-[#BF0A30] cursor-pointer")}
+                    className="bg-[#2DBEFF] cursor-pointer text-white px-4 py-2 rounded hover:bg-[#1A8CD8] transition-colors"
                 >
                     Login
                 </motion.button>
@@ -21,7 +21,7 @@ export const AuthButtons = () => {
                 <motion.button
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="primary-btn px-6 py-2 rounded cursor-pointer"
+                    className="border-[#2DBEFF] border cursor-pointer text-[#2DBEFF] px-4 py-2 rounded hover:bg-[#9A0826] transition-colors"
                 >
                     Register
                 </motion.button>

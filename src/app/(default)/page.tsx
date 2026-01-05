@@ -4,6 +4,7 @@ import WhyChoose from '@/components/pages/index-page/WhyChoose'
 import TestimonialCarousel from '@/components/pages/index-page/TestimonialCarousel'
 import DownloadSection from '@/components/pages/index-page/DownloadSection'
 import JoinSection from '@/components/pages/index-page/JoinSection'
+import CleanersInNumbers from '@/components/pages/index-page/CleanersInNumbers'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -11,12 +12,16 @@ export const metadata: Metadata = {
   description: "Our mission is to simplify job management, ensure secure payments, and help independent cleaners grow their business with confidence.",
 };
 
+import ClientWord from '@/components/testomonials/ClientWord';
+
 function page() {
   return (
-    <div className="flex flex-col gap-12 pb-12">
+    <div className="flex flex-col gap-24">
       <Banner />
+      <ClientWord />
       <WhyChoose />
       <JoinSection />
+      <CleanersInNumbers />
       <DownloadSection />
       <TestimonialCarousel />
     </div>
