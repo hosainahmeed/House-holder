@@ -29,7 +29,7 @@ export const NavigationMenuBar = () => {
             name: 'Tanjim',
             email: 'tanjim@gmail.com',
             profile_image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-            role: 'user',
+            role: 'cleaner',
             user: false
         }
     ]
@@ -56,16 +56,17 @@ export const NavigationMenuBar = () => {
 
 
     const getMenuItems = useCallback(() => {
-        if (!profile) return NON_USER_MENU_ITEMS;
+        return ORGANIZER_MENU_ITEMS
+        // if (!profile) return NON_USER_MENU_ITEMS;
 
-        switch (profile?.role) {
-            case 'user':
-                return LOGIN_USER_MENU_ITEMS;
-            case 'organizer':
-                return ORGANIZER_MENU_ITEMS;
-            default:
-                return NON_USER_MENU_ITEMS;
-        }
+        // switch (profile?.role) {
+        //     case 'user':
+        //         return LOGIN_USER_MENU_ITEMS;
+        //     case 'cleaner':
+        //         return ORGANIZER_MENU_ITEMS;
+        //     default:
+        //         return NON_USER_MENU_ITEMS;
+        // }
     }, [profile]);
     // const menuItems = isLoading ? [] : getMenuItems();
     const menuItems = getMenuItems() || [];

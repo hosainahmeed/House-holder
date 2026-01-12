@@ -112,7 +112,11 @@ function ClientWord() {
       >
         {testimonials.map((testimonial) => (
           <SwiperSlide key={testimonial.id}>
-            <Card className="bg-linear-to-r rounded-md  from-blue-50 to-[#0072C3] w-full p-4 backdrop-blur-2xl bg-white transition-shadow duration-300">
+            <Card
+            style={{
+              backgroundImage: 'linear-gradient(180deg, #dbeafe 0%, #0072C3 100%)'
+            }}
+            className="bg-linear-to-r rounded-md  from-blue-50 to-[#0072C3] w-full p-4 backdrop-blur-2xl bg-white transition-shadow duration-300">
               <div className="flex flex-col gap-2 items-center text-center">
                 <GlowingEffect
                   spread={40}
