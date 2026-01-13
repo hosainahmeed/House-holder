@@ -1,9 +1,15 @@
+'use client'
 import { IMAGE_CONSTANTS } from "@/assets/images/image.index";
 import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+    const pathname = usePathname();
+    if (pathname === "/chat") {
+        return null;
+    }
     return (
         <footer className="bg-linear-to-r mt-12 from-blue-900 to-black text-white py-12 px-4 md:px-8">
             <div className="container mx-auto">

@@ -13,6 +13,7 @@ function page() {
             setLoading(true);
         }, 2000);
     }, [])
+    
     const propertyData = [{
         image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
         date: "Vendredi 15th December",

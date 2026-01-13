@@ -1,309 +1,103 @@
-'use client';
-import React, { useState } from 'react';
-import { cn } from '@/app/lib/utils';
+import { IMAGE_CONSTANTS } from '@/assets/images/image.index';
+import Image from 'next/image';
+import Link from 'next/link';
 
-// Types
-interface User {
-  id: string;
-  name: string;
-  email: string;
-  image: string;
-}
-
-interface Achievement {
-  date: string; // YYYY-MM-DD format
-  user: User;
-  isGuestReservation?: boolean;
-}
-
-// Sample data
-const sampleAchievements: Achievement[] = [
+export const apartments = [
   {
-    date: '2026-01-11',
-    user: {
-      id: '1',
-      name: 'John Doe',
-      email: 'john@example.com',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=John'
-    }
-  },
-  {
-    date: '2026-01-17',
-    user: {
-      id: '2',
-      name: 'Jane Smith',
-      email: 'jane@example.com',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Jane'
-    }
-  },
-  {
-    date: '2026-02-11',
-    user: {
-      id: '3',
-      name: 'Mike Johnson',
-      email: 'mike@example.com',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Mike'
+    id: 1,
+    name: 'Private room in San Francisco',
+    location: 'Los Angeles, CA',
+    country: 'USA',
+    image: 'https://placehold.co/200x200',
+    description: "I'm after 2 palettes that are sold out online but available from 2 specific stores. They need to be sent out to you in the US and then forwarded to me in Sydney...",
+    host: {
+      name: 'Marvin Fey',
+      status: 'Chat Now',
+      image: 'https://placehold.co/200x200',
     },
-    isGuestReservation: true
-  },
-  {
-    date: '2026-02-18',
-    user: {
-      id: '4',
-      name: 'Sarah Williams',
-      email: 'sarah@example.com',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah'
+    schedule: {
+      day: 'Sunday',
+      time: '10:00 - 16:00'
     },
-    isGuestReservation: true
-  },
-  {
-    date: '2026-03-01',
-    user: {
-      id: '5',
-      name: 'Alex Brown',
-      email: 'alex@example.com',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alex'
+    specs: {
+      size: '150 m²',
+      bedrooms: 2,
+      beds: 2
+    },
+    price: 150.23,
+    currency: '€',
+    amenities: ['Kitchen', 'Washer Provided', 'Supplies Provided'],
+    logistics: {
+      keyHandover: 'In-person key handover',
+      specialTask: 'Change the bed: Bed sheets and pillows are used from inside the property'
     }
   },
   {
-    date: '2026-03-18',
-    user: {
-      id: '6',
-      name: 'Emily Davis',
-      email: 'emily@example.com',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emily'
+    id: 2,
+    name: 'Flower Apartment',
+    location: 'De Lys',
+    country: 'France',
+    image: 'https://placehold.co/200x200',
+    description: 'Beautiful garden view apartment...',
+    host: { name: 'Sophie L.', status: 'Away' },
+    schedule: { day: 'Monday', time: '09:00 - 18:00' },
+    specs: { size: '85 m²', bedrooms: 1, beds: 1 },
+    price: 95.00,
+    currency: '€',
+    amenities: ['Kitchen', 'Wifi'],
+    logistics: {
+      keyHandover: 'Lockbox',
+      specialTask: 'Water the plants'
     }
   }
+  // ... you can repeat this structure for IDs 3 and 4
 ];
 
-// Utility functions
-const getDaysInMonth = (year: number, month: number): number => {
-  return new Date(year, month + 1, 0).getDate();
-};
+function Page() {
+  // Example dynamic data array
 
-const getFirstDayOfMonth = (year: number, month: number): number => {
-  return new Date(year, month, 1).getDay();
-};
-
-const formatDate = (year: number, month: number, day: number): string => {
-  return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-};
-
-const getMonthsWithAchievements = (achievements: Achievement[]): Set<number> => {
-  const months = new Set<number>();
-  achievements.forEach(achievement => {
-    const date = new Date(achievement.date);
-    months.add(date.getMonth());
-  });
-  return months;
-};
-
-// Components
-interface TooltipProps {
-  user: User;
-  position: { x: number; y: number };
-}
-
-const UserTooltip: React.FC<TooltipProps> = ({ user, position }) => {
-  return (
-    <div
-      className="absolute z-50 bg-white rounded-lg shadow-lg p-3 border border-gray-200 pointer-events-none"
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        transform: 'translate(-50%, -120%)',
-        minWidth: '200px'
-      }}
-    >
-      <div className="flex items-center gap-3">
-        <img
-          src={user?.image}
-          alt={user?.name}
-          className="w-10 h-10 rounded-full"
-        />
-        <div className="flex-1 min-w-0">
-          <p className="font-semibold text-sm text-gray-900 truncate">{user?.name}</p>
-          <p className="text-xs text-gray-600 truncate">{user?.email}</p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-interface DayCellProps {
-  day: number | null;
-  achievement: Achievement | null;
-  onHover: (achievement: Achievement | null, element: HTMLElement | null) => void;
-}
-
-const DayCell: React.FC<DayCellProps> = ({ day, achievement, onHover }) => {
-  console.log(achievement)
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (achievement) {
-      onHover(achievement, e.currentTarget);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    onHover(null, null);
-  };
-
-  if (day === null) {
-    return <div className="h-24 rounded-xl border border-gray-200" />;
-  }
 
   return (
-    <div
-      className={cn(
-        'h-24 border border-gray-200 rounded-xl flex items-start justify-center p-1 relative',
-        achievement ? 'cursor-pointer bg-[#3F3F3F] ' : ''
-      )}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className={cn('text-xs text-gray-600', achievement ? 'text-white' : '')}>{day}</div>
-      {achievement && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center overflow-hidden">
-            {achievement.user?.image ? (
-              <img 
-                src={achievement.user?.image} 
-                alt={achievement.user?.name} 
-                className="w-full h-full object-cover"
+    <div className="container mx-auto py-4 space-y-4">
+      <h1 className="text-3xl font-semibold text-black">Calendar</h1>
+      {apartments.map((apt) => (
+        <div
+          key={apt.id}
+          className="flex items-center justify-between gap-4 border rounded-md p-4  border-gray-300 shadow-sm"
+        >
+          <div className="flex items-center gap-4">
+            <Image
+              className="w-32 h-32 rounded-md object-cover"
+              src={apt.image}
+              width={150}
+              height={150}
+              alt={apt.name}
+            />
+            <div className="flex flex-col">
+              <h1 className="text-2xl font-semibold text-black">{apt.name}</h1>
+              <h4 className="text-gray-500">{apt.location}</h4>
+              <h4 className="text-gray-500">{apt.country}</h4>
+              <Link href={`/calendar/details/${apt.id}`}>
+                <button className="mt-2 cursor-pointer px-4 py-2 bg-[#2DBEFF] text-white rounded">
+                  View Details
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div>
+            <Link href={`/calendar/${apt.id}`}>
+              <Image
+                src={IMAGE_CONSTANTS.calenderBigIcon}
+                width={100}
+                height={100}
+                alt="calendar"
               />
-            ) : (
-              <span className="text-white text-sm font-medium">
-                {achievement.user?.name?.charAt(0).toUpperCase()}
-              </span>
-            )}
+            </Link>
           </div>
         </div>
-      )}
+      ))}
     </div>
   );
-};
-
-interface CalendarMonthProps {
-  year: number;
-  month: number;
-  achievements: Achievement[];
-  onHover: (achievement: Achievement | null, element: HTMLElement | null) => void;
 }
 
-const CalendarMonth: React.FC<CalendarMonthProps> = ({ year, month, achievements, onHover }) => {
-  const monthNames = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
-  ];
-  const dayNames = ['SA', 'SU', 'MO', 'TU', 'WE', 'TH', 'FRI'];
-
-  const daysInMonth = getDaysInMonth(year, month);
-  const firstDay = getFirstDayOfMonth(year, month);
-
-  const achievementMap = new Map<string, Achievement>();
-  achievements.forEach(achievement => {
-    achievementMap.set(achievement.date, achievement);
-  });
-
-  const days: (number | null)[] = [];
-  for (let i = 0; i < firstDay; i++) {
-    days.push(null);
-  }
-  for (let i = 1; i <= daysInMonth; i++) {
-    days.push(i);
-  }
-
-  const weeks: (number | null)[][] = [];
-  for (let i = 0; i < days.length; i += 7) {
-    weeks.push(days.slice(i, i + 7));
-  }
-
-  return (
-    <div className="bg-white rounded-lg p-4">
-      <h3 className="text-lg text-[#3F3F3F] font-semibold mb-4">{monthNames[month]} {year}</h3>
-      <div className="grid grid-cols-7 gap-1">
-        {dayNames.map((day, index) => (
-          <div
-            key={index}
-            className="h-8 flex items-center justify-center text-xs font-medium text-gray-600"
-          >
-            {day}
-          </div>
-        ))}
-        {weeks.map((week, weekIndex) =>
-          week.map((day, dayIndex) => {
-            const dateStr = day ? formatDate(year, month, day) : null;
-            const achievement = dateStr ? achievementMap.get(dateStr) || null : null;
-            return (
-              <DayCell
-                key={`${weekIndex}-${dayIndex}`}
-                day={day}
-                achievement={achievement}
-                onHover={onHover}
-              />
-            );
-          })
-        )}
-      </div>
-    </div>
-  );
-};
-
-// Main Component
-const CleaningCalendar: React.FC = () => {
-  const [achievements] = useState<Achievement[]>(sampleAchievements);
-  const [hoveredAchievement, setHoveredAchievement] = useState<Achievement | null>(null);
-  const [tooltipPosition, setTooltipPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-
-  const currentYear = 2026;
-  const monthsWithAchievements = getMonthsWithAchievements(achievements);
-
-  const handleHover = (achievement: Achievement | null, element: HTMLElement | null) => {
-    if (achievement && element) {
-      const rect = element.getBoundingClientRect();
-      setTooltipPosition({
-        x: rect.left + rect.width / 2,
-        y: rect.top
-      });
-      setHoveredAchievement(achievement);
-    } else {
-      setHoveredAchievement(null);
-    }
-  };
-
-  return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Cleaning Achievements</h1>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Array.from(monthsWithAchievements)
-            .sort((a, b) => a - b)
-            .map(month => (
-              <CalendarMonth
-                key={month}
-                year={currentYear}
-                month={month}
-                achievements={achievements}
-                onHover={handleHover}
-              />
-            ))}
-        </div>
-
-        {monthsWithAchievements.size === 0 && (
-          <div className="text-center py-16">
-            <p className="text-gray-500 text-lg">No cleaning achievements yet</p>
-          </div>
-        )}
-
-        {hoveredAchievement && (
-          <UserTooltip user={hoveredAchievement?.user} position={tooltipPosition} />
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default CleaningCalendar;
+export default Page;
