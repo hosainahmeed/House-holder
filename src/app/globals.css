@@ -25,3 +25,15 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+.card{
+  @apply bg-white rounded-2xl p-4 border ;
+}
+
+.hide-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
