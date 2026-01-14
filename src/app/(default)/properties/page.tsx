@@ -11,7 +11,7 @@ function page() {
     useEffect(() => {
         setTimeout(() => {
             setLoading(true);
-        }, 2000);
+        }, 500);
     }, [])
     
     const propertyData = [{
@@ -49,7 +49,9 @@ function page() {
                 <Link href='/create_cleaning_request'>
                     <Button type='default'>Create Cleaning Request</Button>
                 </Link>
-                <Button type='primary' style={{ backgroundColor: '#2DBEFF' }} icon={<Plus size={16} />}>Add Properties</Button>
+                <Link href='/properties/add-property'>
+                    <Button type='primary' style={{ backgroundColor: '#2DBEFF' }} icon={<Plus size={16} />}>Add Properties</Button>
+                </Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {

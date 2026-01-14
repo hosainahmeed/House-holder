@@ -90,7 +90,7 @@ function page() {
             </section>
             <div className="flex flex-col items-center gap-4">
                 <Typography variant="h2" className='text-black text-center'>Mission, Vision & Values</Typography>
-                <Typography variant="body" className='text-black max-w-5xl md:px-12 text-center'>Our mission is to connect professional cleaners with verified hosts through a simple, secure, and transparent platform.</Typography>
+                <Typography variant="body" className='text-black max-w-5xl md:px-12 mb-6 text-center'>Our mission is to connect professional cleaners with verified hosts through a simple, secure, and transparent platform.</Typography>
             </div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">

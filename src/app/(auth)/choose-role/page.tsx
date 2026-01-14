@@ -1,11 +1,15 @@
+'use client'
 import { Button, Card } from "antd";
 import Image from "next/image";
 
 import { IMAGE_CONSTANTS } from "@/assets/images/image.index";
 import { Typography } from "@/components/typography/typoGraphy";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { ArrowBigLeft } from "lucide-react";
 
 export default function ChooseRolePage() {
+    const router = useRouter()
     const chooseRoleDetails = [
         {
             role: "host",
@@ -26,15 +30,17 @@ export default function ChooseRolePage() {
     ]
     return (
         <main className="absolute max-w-6xl z-10 flex flex-col gap-4 mx-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            
+            <Button icon={<ArrowBigLeft />} shape="default" className="w-fit" type="primary" onClick={()=>router.back()} >Back</Button>
             {chooseRoleDetails.map((detail, index) => (
                 <Card style={{ backgroundColor: '#EFF6FF' }} key={index}>
                     <div className="flex flex-col md:flex-row items-center gap-4">
-                        <Card variant="outlined" style={{ backgroundColor: '#FFFFFF', padding: '0', margin: '0' }}>
-                            <Image className="w-full h-full" src={detail.image} alt={detail.role} width={200} height={200} />
+                        <Card variant="outlined" style={{ backgroundColor: '#fff', padding: '0', margin: '0' ,width: '200px', height: '150px' }}>
+                            <Image className="w-full h-full aspect-square object-cover" src={detail.image} alt={detail.role} width={200} height={150} />
                         </Card>
                         <div className="flex flex-col items-start">
                             <Typography variant="h1">{detail.title}</Typography>
-                            <Typography variant="subtitle" className="font-light">{detail.description}</Typography>
+                            <Typography variant="overline" className="my-3 font-light text-sm">{detail.description}</Typography>
                             <Link href={detail.href}><Button size="large" type="primary">{detail.buttonText}</Button></Link>
                         </div>
                     </div>

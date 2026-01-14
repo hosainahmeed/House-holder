@@ -91,9 +91,9 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
 
         {/* Price and Action */}
         <div className="flex items-center justify-between pt-2">
-          <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#2DBEFF]">
+          {/* <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#2DBEFF]">
             5
-          </div>
+          </div> */}
           <div className="text-right">
             <div className="text-xs text-gray-500">Starting from</div>
             <div className="text-2xl font-bold text-gray-900">{price}</div>

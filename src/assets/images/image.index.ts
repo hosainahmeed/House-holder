@@ -15,7 +15,7 @@ import diamond from "./diamond.svg"
 import target from "./target.svg"
 import contact from "./contact.png"
 import calenderBigIcon from "./calender-big-icon.svg"
-
+import bedLinens from "./bed_linens.png"
 
 
 export const IMAGE_CONSTANTS = {
@@ -36,4 +36,5 @@ export const IMAGE_CONSTANTS = {
     target,
     contact,
     calenderBigIcon,
+    bedLinens,
 } as const;

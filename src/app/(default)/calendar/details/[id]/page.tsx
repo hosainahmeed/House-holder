@@ -89,7 +89,7 @@ const Page = () => {
 
       {/* Schedule and Details */}
       <div className="space-y-4 mb-6">
-        <div className="flex items-center border-y py-4 gap-3">
+        <div className="flex items-center border-y border-gray-200 py-4 gap-3">
           <div className="w-10 h-10 bg-gray-100 rounded-full shrink-0 flex items-center justify-center">
             <Calendar className="w-5 h-5 text-gray-600" />
           </div>
@@ -109,7 +109,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-between border-y py-4">
+        <div className="flex items-center justify-between border-y border-gray-200 py-4">
           <span className="text-black font-semibold">Price</span>
           <span className="text-lg font-semibold text-black">{eventData.currency} {eventData.price.toFixed(2)}</span>
         </div>

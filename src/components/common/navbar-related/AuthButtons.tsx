@@ -8,7 +8,7 @@ import Link from 'next/link';
 export const AuthButtons = () => {
     return (
         <div className="flex items-center space-x-4">
-            <Link href="/sign-in">
+            <Link href="/login">
                 <motion.button
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
