@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Calendar, Maximize2, Bed, BedDouble, Bath, Clock, MapPin } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 import UserProfileShow from '../common/UserProfileShow';
 import { Button, Tooltip, message } from 'antd';
 import { IoTrash } from 'react-icons/io5';
@@ -21,10 +20,11 @@ interface PropertyCardProps {
   price?: string;
   isFavorite?: boolean;
   status?: string;
+  onclick?: (id: string) => void;
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({
-  id,
+  id = "1",
   image = "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
   date = "Vendredi 15th December",
   title = "Francisco",
@@ -37,8 +37,9 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   location = "e.g. B. Berlin or Peak Fit...",
   price = "50,25 €",
   status,
+  onclick,
 }) => {
-  const router = useRouter()
+
   const [isReviewModalVisible, setIsReviewModalVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -76,7 +77,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
       {/* Content Section */}
       <div className="mt-4 space-y-3">
         {/* Date */}
-        <div onClick={() => router.push(`/properties/property_overview/${id}`)} className="cursor-pointer">
+        <div onClick={() => onclick?.(id as string)} className="cursor-pointer">
           <div className="flex items-center gap-2 text-gray-600">
             <Calendar className="w-5 h-5" aria-hidden="true" />
             <time dateTime={visitDate} className="text-sm font-medium text-gray-700">

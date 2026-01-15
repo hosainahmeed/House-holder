@@ -15,7 +15,7 @@ export const NON_USER_MENU_ITEMS: MenuItem[] = [
 export const ORGANIZER_MENU_ITEMS: MenuItem[] = [
     { label: 'Home', href: '/' },
     { label: 'Jobs', href: '/jobs' },
-    { label: 'Calendar', href: '/calendar' },
+    { label: 'Calendar', href: '/cleaner-calender' },
     { label: 'Contact Us', href: '/contact-us' },
 ];
 

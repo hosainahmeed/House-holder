@@ -3,6 +3,7 @@ import React from 'react';
 import { ConfigProvider, Tabs } from 'antd';
 import type { TabsProps } from 'antd';
 import PropertyCard from '@/components/cards/PropertyCard';
+import { useRouter } from 'next/navigation';
 
 const onChange = (key: string) => {
   console.log(key);
@@ -10,10 +11,10 @@ const onChange = (key: string) => {
 
 
 const RenderJobsPage = ({ value }: { value: string }) => {
-  console.log(value);
+  const router = useRouter()
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-      <PropertyCard status={value} />
+      <PropertyCard status={value} onclick={(id) => router.push(`/jobs/${id}`)} />
     </div>
   )
 }
@@ -28,7 +29,7 @@ const items: TabsProps['items'] = [
 const Page: React.FC = () => {
   return (
     <div className='container py-12 mx-auto'>
-      <ConfigProvider theme={{ token: { colorPrimary: '#111', colorBgContainer: '#2DBEFF' } }}>
+      <ConfigProvider theme={{ token: { colorPrimary: '#fff', colorBgContainer: '#2DBEFF' } }}>
         <Tabs
           defaultActiveKey="all"
           items={items}

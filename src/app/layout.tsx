@@ -47,6 +47,9 @@ const themeConfig: ThemeConfig = {
     Input: {
       fontSizeLG: 20,
     },
+    Tabs: {
+      itemHoverColor: "#2DBEFF"
+    },
     Form: {
       labelFontSize: 18,
       labelHeight: 32
@@ -67,7 +70,7 @@ export default function RootLayout({
       >
         <ConfigProvider theme={themeConfig}>
           {/* <ClickjackingFixed> */}
-            {children}
+          {children}
           {/* </ClickjackingFix/ed> */}
         </ConfigProvider>
       </body>

@@ -49,7 +49,7 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
                 { label: 'My Jobs', icons: <BriefcaseBusiness />, onPointerDown: () => handleNavigate('/jobs') },
                 { label: 'Messages', icons: <MessageCircle size={20} />, onPointerDown: () => handleNavigate('/chat') },
                 { label: 'My Profile & Setting', icons: <CgProfile size={20} />, onPointerDown: () => handleNavigate('/my-profile') },
-                { label: 'Rating Review', icons: <Star size={20} />, onPointerDown: () => handleNavigate('/my-profile') },
+                { label: 'Rating Review', icons: <Star size={20} />, onPointerDown: () => handleNavigate('/all-review') },
                 { label: 'My Income', icons: <LuChartNoAxesCombined size={20} />, onPointerDown: () => handleNavigate('/my-income') },
             ];
         }
