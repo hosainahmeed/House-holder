@@ -170,7 +170,7 @@ export default function Page() {
                 {/* DATE LIST */}
                 {/* you can add this max-h-[calc(100vh-25rem)] overflow-y-auto */}
                 <div className="col-span-12 overflow-hidden md:col-span-4  bg-white rounded-xl border border-gray-200 ">
-                    <h2 className="font-semibold text-lg mb-4 sticky top-0 p-4 z-10 bg-gray-100">Work Dates <small className="text-gray-500">({worksByMonth.length ? "please select a date" : "No works date found"})</small> </h2>
+                    <h2 className="font-semibold text-lg sticky top-0 p-4 z-10 bg-gray-100">Work Dates <small className="text-gray-500">({worksByMonth.length ? "please select a date" : "No works date found"})</small> </h2>
                     <div>
                         {worksByMonth.length ? (
                             <ul className="divide-y divide-gray-200">
