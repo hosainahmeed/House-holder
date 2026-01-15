@@ -12,13 +12,14 @@ export const NON_USER_MENU_ITEMS: MenuItem[] = [
     { label: 'FAQ', href: '/faq' },
 ];
 
-export const LOGIN_USER_MENU_ITEMS: MenuItem[] = [
+export const ORGANIZER_MENU_ITEMS: MenuItem[] = [
     { label: 'Home', href: '/' },
-    { label: 'Browse Events', href: '/browse-events' },
-    { label: 'Contact / Help', href: '/contact-us' },
+    { label: 'Jobs', href: '/jobs' },
+    { label: 'Calendar', href: '/calendar' },
+    { label: 'Contact Us', href: '/contact-us' },
 ];
 
-export const ORGANIZER_MENU_ITEMS: MenuItem[] = [
+export const HOST_USER_MENU_ITEMS: MenuItem[] = [
     { label: 'Home', href: '/' },
     { label: 'Properties', href: '/properties' },
     { label: 'Calendar', href: '/calendar' },

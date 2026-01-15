@@ -25,7 +25,7 @@ const Page = () => {
   return (
     <div className="container mx-auto flex h-[calc(100vh-5rem)] w-full bg-white md:p-4 gap-4 overflow-hidden">
       <div className={cn(
-        "absolute inset-0 z-999 bg-[#70C8FF] h-screen w-[75%] transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:max-w-[350px] md:flex md:rounded-2xl flex-col p-3 overflow-hidden",
+        "absolute inset-0 z-999 bg-[#70C8FF] h-full w-[75%] transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:max-w-[350px] md:flex md:rounded-2xl flex-col p-3 overflow-hidden",
         isListOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
       )}>
         <div className="flex justify-between items-center mb-4 px-2">
@@ -64,7 +64,7 @@ const Page = () => {
             <Plus size={24} />
             <input ref={fileInputRef} type="file" className="hidden" />
           </button>
-          <form className="flex items-center gap-3" onSubmit={handleSubmit}>
+          <form className="flex items-center w-full gap-3" onSubmit={handleSubmit}>
             <input
               name="message"
               type="text"

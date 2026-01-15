@@ -42,7 +42,6 @@ const themeConfig: ThemeConfig = {
       colorPrimaryHover: "rgb(0,0,0)"
     },
     Select: {
-      optionSelectedColor: "rgba(255,255,255,0.88)",
       fontSizeLG: 16
     },
     Input: {

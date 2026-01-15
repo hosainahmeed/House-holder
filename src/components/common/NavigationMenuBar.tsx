@@ -14,7 +14,7 @@ import { IMAGE_CONSTANTS } from '@/assets/images/image.index';
 import { NavigationItems } from './navbar-related/NavigationItems';
 import { ProfileAvatar } from './navbar-related/ProfileAvatar';
 import { ProfileDropdown } from './navbar-related/ProfileDropdown';
-import { LOGIN_USER_MENU_ITEMS, NON_USER_MENU_ITEMS, ORGANIZER_MENU_ITEMS } from './navbar-related/navigation';
+import { HOST_USER_MENU_ITEMS, NON_USER_MENU_ITEMS, ORGANIZER_MENU_ITEMS } from './navbar-related/navigation';
 import { AuthButtons } from './navbar-related/AuthButtons';
 import { Button } from 'antd';
 
@@ -24,15 +24,13 @@ export const NavigationMenuBar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const router = useRouter()
     const pathname = usePathname();
-    const profile: any = [
-        {
-            name: 'Tanjim',
-            email: 'tanjim@gmail.com',
-            profile_image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-            role: 'cleaner',
-            user: false
-        }
-    ]
+    const profile: any = {
+        name: 'Tanjim',
+        email: 'tanjim@gmail.com',
+        profile_image: 'https://placehold.co/600x400',
+        role: 'cleaner',
+        user: true
+    }
 
     // if (isLoading) {
     //     <div className="h-20 bg-white/80 backdrop-blur-md border-b border-gray-200 supports-backdrop-blur:bg-white/60"></div>
@@ -56,17 +54,17 @@ export const NavigationMenuBar = () => {
 
 
     const getMenuItems = useCallback(() => {
-        return ORGANIZER_MENU_ITEMS
-        // if (!profile) return NON_USER_MENU_ITEMS;
+        // return ORGANIZER_MENU_ITEMS
+        if (!profile) return NON_USER_MENU_ITEMS;
 
-        // switch (profile?.role) {
-        //     case 'user':
-        //         return LOGIN_USER_MENU_ITEMS;
-        //     case 'cleaner':
-        //         return ORGANIZER_MENU_ITEMS;
-        //     default:
-        //         return NON_USER_MENU_ITEMS;
-        // }
+        switch (profile?.role) {
+            case 'host':
+                return HOST_USER_MENU_ITEMS;
+            case 'cleaner':
+                return ORGANIZER_MENU_ITEMS;
+            default:
+                return NON_USER_MENU_ITEMS;
+        }
     }, [profile]);
     // const menuItems = isLoading ? [] : getMenuItems();
     const menuItems = getMenuItems() || [];
@@ -204,10 +202,6 @@ export const NavigationMenuBar = () => {
                                 <div className="pt-4 border-t border-gray-200">
                                     {!profile?.user ? (
                                         <div className="flex flex-col space-y-3">
-                                            <AuthButtons />
-                                        </div>
-                                    ) : (
-                                        <div className="flex flex-col space-y-3">
                                             <div onPointerDown={() => router.push("/my-profile-organizer")} className="flex items-center space-x-3 p-2">
                                                 <div
                                                     className="w-8 h-8 bg-linear-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">
@@ -237,6 +231,10 @@ export const NavigationMenuBar = () => {
                                             >
                                                 Sign Out
                                             </Button>
+                                        </div>
+                                    ) : (
+                                        <div className="flex flex-col space-y-3">
+                                            <AuthButtons />
                                         </div>
                                     )}
                                 </div>

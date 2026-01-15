@@ -39,6 +39,7 @@ import { CLEANING_OPTIONS, SAMPLE_PROPERTIES } from '@/constant/property.create'
 import { useFormHandlers } from '@/hooks/useFormHandlers'
 import { PriceTable } from '@/components/create-cleaning-request/PriceTable'
 import CleaningOptionCard from '@/components/create-cleaning-request/CleaningOptionCard'
+import BackButton from '@/components/ui/BackButton'
 
 const { Title, Text } = Typography
 const { Panel } = Collapse
@@ -112,9 +113,7 @@ export default function CleaningServiceBooking() {
         <Space orientation="vertical" size="large" style={{ width: '100%' }}>
           {/* Header */}
           <div>
-            <h1 className='text-xl sm:text-2xl md:text-3xl font-bold'>
-              Create a Cleaning Request
-            </h1>
+            <BackButton title="Create a Cleaning Request" className='text-[#2DBEFF]' />
           </div>
 
           {/* Form */}

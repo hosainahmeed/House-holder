@@ -13,8 +13,9 @@ function page() {
             setLoading(true);
         }, 500);
     }, [])
-    
+
     const propertyData = [{
+        id: "1",
         image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
         date: "Vendredi 15th December",
         title: "Francisco",
@@ -28,6 +29,7 @@ function page() {
         price: "50,25 €"
     },
     {
+        id: "2",
         image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
         date: "Vendredi 15th December",
         title: "Francisco",
@@ -44,14 +46,16 @@ function page() {
 
     return (
         <div className="min-h-screen container mx-auto">
-            <h1 className='text-2xl font-bold text-[#2DBEFF]'>My Properties</h1>
-            <div className="my-3 justify-end flex gap-2">
-                <Link href='/create_cleaning_request'>
-                    <Button type='default'>Create Cleaning Request</Button>
-                </Link>
-                <Link href='/properties/add-property'>
-                    <Button type='primary' style={{ backgroundColor: '#2DBEFF' }} icon={<Plus size={16} />}>Add Properties</Button>
-                </Link>
+            <div className="flex justify-between items-center">
+                <h1 className='text-2xl font-bold text-[#2DBEFF]'>My Properties</h1>
+                <div className="my-3 justify-end flex gap-2">
+                    <Link href='/create_cleaning_request'>
+                        <Button type='default'>Create Cleaning Request</Button>
+                    </Link>
+                    <Link href='/properties/add-property'>
+                        <Button type='primary' style={{ backgroundColor: '#2DBEFF' }} icon={<Plus size={16} />}>Add Properties</Button>
+                    </Link>
+                </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {

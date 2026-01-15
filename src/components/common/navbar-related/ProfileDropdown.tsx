@@ -1,11 +1,15 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { LogOut } from 'lucide-react';
+import { BriefcaseBusiness, Calendar, icons, LogOut, MessageCircle, Settings, Star } from 'lucide-react';
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { ICONS } from '@/assets/icons/index.icons';
+import { CgProfile } from 'react-icons/cg';
+import { GrFavorite } from 'react-icons/gr';
+import { LuChartNoAxesCombined } from 'react-icons/lu';
+import { MdReviews } from 'react-icons/md';
 
 
 export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: any) => {
@@ -28,24 +32,25 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
         onClose();
     };
 
-// setting,
-//    message,
-//    calender,
-//    subscription,
 
     const getMenuItems = () => {
-        if (user?.role === 'user') {
+        if (user?.role === 'host') {
             return [
-                { label: 'Shortlisted Events', icons: ICONS.calender, onPointerDown: () => handleNavigate('/my-shortlisted-events') },
-                { label: 'My Subscription', icons: ICONS.calender, onPointerDown: () => handleNavigate('/my-subscription') },
-                { label: 'My Profile', icons: ICONS.setting, onPointerDown: () => handleNavigate('/my-profile') }
+                { label: 'My Properties', icons: <Calendar size={20} />, onPointerDown: () => handleNavigate('/my-shortlisted-events') },
+                { label: 'Messages', icons: <MessageCircle size={20} />, onPointerDown: () => handleNavigate('/my-subscription') },
+                { label: 'My Profile & Setting', icons: <CgProfile size={20} />, onPointerDown: () => handleNavigate('/my-profile') },
+                { label: 'Favorite cleaner', icons: <GrFavorite size={20} />, onPointerDown: () => handleNavigate('/my-profile') },
+                { label: 'Transaction', icons: <LuChartNoAxesCombined size={20} />, onPointerDown: () => handleNavigate('/my-profile') },
             ];
         }
 
-        if (user.role === 'organizer') {
+        if (user?.role === 'cleaner') {
             return [
-                { label: 'My Events', icons: ICONS.calender, onPointerDown: () => handleNavigate('/my-events') },
-                { label: 'My Profile', icons: ICONS.userSetting, onPointerDown: () => handleNavigate('/my-profile-organizer') }
+                { label: 'My Jobs', icons: <BriefcaseBusiness />, onPointerDown: () => handleNavigate('/jobs') },
+                { label: 'Messages', icons: <MessageCircle size={20} />, onPointerDown: () => handleNavigate('/chat') },
+                { label: 'My Profile & Setting', icons: <CgProfile size={20} />, onPointerDown: () => handleNavigate('/my-profile') },
+                { label: 'Rating Review', icons: <Star size={20} />, onPointerDown: () => handleNavigate('/my-profile') },
+                { label: 'My Income', icons: <LuChartNoAxesCombined size={20} />, onPointerDown: () => handleNavigate('/my-income') },
             ];
         }
 
@@ -98,7 +103,7 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
                                     onPointerDown={item.onPointerDown}
                                     className="w-full flex cursor-pointer items-center gap-2 text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md transition-colors duration-200"
                                 >
-                                    <Image src={item.icons} width={20} height={20} alt={item.label} />  {item.label}
+                                    {item?.icons}  {item.label}
                                 </motion.button>
                             ))}
                         </div>

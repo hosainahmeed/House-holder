@@ -21,7 +21,7 @@ export const AuthButtons = () => {
                 <motion.button
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="border-[#2DBEFF] border cursor-pointer text-[#2DBEFF] px-4 py-2 rounded hover:bg-[#9A0826] transition-colors"
+                    className="border-[#2DBEFF] border cursor-pointer text-[#2DBEFF] px-4 py-2 rounded transition-colors"
                 >
                     Register
                 </motion.button>
