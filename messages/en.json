@@ -1,0 +1,73 @@
+{
+  "Common": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!"
+  },
+  "HomePage": {
+    "title": "Welcome to AirHousehold",
+    "subtitle": "Connect with professional cleaners",
+    "description": "Join a trusted platform that connects professional cleaners with verified hosts.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "AboutUs": {
+    "metaTitle": "About Us",
+    "metaDescription": "Our mission is to simplify job management, ensure secure payments, and help independent cleaners grow their business with confidence.",
+    "title": "About Us",
+    "description": "Our mission is to simplify job management, ensure secure payments, and help independent cleaners grow their business with confidence.",
+    "subtitle": "Simplifying Classroom Management for Every CR",
+    "heading": "When classes stay connected, learning becomes stronger.",
+    "intro1": "OUR CR is a smart, web-based platform built to make every Class Representative's job easier. From managing student lists and class schedules to posting announcements, assignments, and handling student issues — OUR CR brings everything together in one simple dashboard.",
+    "intro2": "We started with one clear goal: to make communication between CRs and students fast, transparent, and organized. No more missing notices, confusing class times, or scattered updates — OUR CR keeps your academic world connected, one click at a time.",
+    "intro3": "OUR CR is a smart, web-based platform built to make every Class Representative's job easier. From managing student lists and class schedules to posting announcements, assignments, and handling student issues — OUR CR brings everything together in one simple dashboard.",
+    "missionTitle": "Our Mission",
+    "missionDescription": "Our mission is to connect professional cleaners with verified hosts through a simple, secure, and transparent platform. We aim to make job management effortless, ensure fair payments, and build trust on every completed service.",
+    "visionTitle": "Our Vision",
+    "visionDescription": "Our vision is to become a leading platform for on-demand cleaning services, empowering independent cleaners to grow their business while providing hosts with reliable, high-quality cleaning solutions worldwide.",
+    "valuesTitle": "Our Values",
+    "valuesDescription": "We believe in trust, transparency, and professionalism. We value fair work, secure payments, clear communication, and mutual respect between cleaners and hosts, ensuring a positive experience for everyone on our platform.",
+    "sectionTitle": "Mission, Vision & Values",
+    "sectionDescription": "Our mission is to connect professional cleaners with verified hosts through a simple, secure, and transparent platform."
+  },
+  "Auth": {
+    "login": {
+      "title": "Login to your account",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up"
+    },
+    "register": {
+      "title": "Create an account",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign in"
+    }
+  },
+  "Navigation": {
+    "dashboard": "Dashboard",
+    "properties": "Properties",
+    "calendar": "Calendar",
+    "jobs": "Jobs",
+    "chat": "Chat",
+    "profile": "Profile"
+  }
+}

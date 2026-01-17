@@ -1,18 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ConfigProvider, ThemeConfig } from "antd";
-// import ClickjackingFixed from "@/utils/ClickjackingFixed";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: {
@@ -24,56 +11,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.airmenage.com"),
 };
 
-
-const themeConfig: ThemeConfig = {
-  token: {
-    borderRadius: 4,
-    fontSize: 16,
-    colorPrimary: '#2563EB',
-  },
-  components: {
-    Radio: {
-      buttonSolidCheckedBg: 'rgb(136,148,166)',
-      buttonSolidCheckedHoverBg: 'rgb(127,132,139)',
-      borderRadius: 1,
-    },
-    Checkbox: {
-      colorPrimary: "rgb(0,0,0)",
-      colorPrimaryHover: "rgb(0,0,0)"
-    },
-    Select: {
-      fontSizeLG: 16
-    },
-    Input: {
-      fontSizeLG: 20,
-    },
-    Tabs: {
-      itemHoverColor: "#2DBEFF"
-    },
-    Form: {
-      labelFontSize: 18,
-      labelHeight: 32
-    }
-  },
-};
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ConfigProvider theme={themeConfig}>
-          {/* <ClickjackingFixed> */}
-          {children}
-          {/* </ClickjackingFix/ed> */}
-        </ConfigProvider>
-      </body>
+    <html>
+      <body>{children}</body>
     </html>
   );
 }

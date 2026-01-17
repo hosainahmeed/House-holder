@@ -1,0 +1,73 @@
+{
+  "Common": {
+    "home": "Accueil",
+    "aboutUs": "À propos",
+    "contactUs": "Contactez-nous",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "logout": "Déconnexion",
+    "submit": "Soumettre",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "search": "Rechercher",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "success": "Succès!"
+  },
+  "HomePage": {
+    "title": "Bienvenue sur AirHousehold",
+    "subtitle": "Connectez-vous avec des nettoyeurs professionnels",
+    "description": "Rejoignez une plateforme de confiance qui connecte les nettoyeurs professionnels avec des hôtes vérifiés.",
+    "getStarted": "Commencer",
+    "learnMore": "En savoir plus"
+  },
+  "AboutUs": {
+    "metaTitle": "À propos",
+    "metaDescription": "Notre mission est de simplifier la gestion des emplois, d'assurer des paiements sécurisés et d'aider les nettoyeurs indépendants à développer leur entreprise en toute confiance.",
+    "title": "À propos",
+    "description": "Notre mission est de simplifier la gestion des emplois, d'assurer des paiements sécurisés et d'aider les nettoyeurs indépendants à développer leur entreprise en toute confiance.",
+    "subtitle": "Simplifier la gestion de classe pour chaque CR",
+    "heading": "Quand les classes restent connectées, l'apprentissage devient plus fort.",
+    "intro1": "NOTRE CR est une plateforme intelligente basée sur le web conçue pour faciliter le travail de chaque Représentant de Classe. De la gestion des listes d'étudiants et des horaires de classe à la publication d'annonces, de devoirs et à la gestion des problèmes des étudiants — NOTRE CR rassemble tout dans un tableau de bord simple.",
+    "intro2": "Nous avons commencé avec un objectif clair : rendre la communication entre les CR et les étudiants rapide, transparente et organisée. Plus d'avis manqués, d'heures de classe confuses ou de mises à jour dispersées — NOTRE CR maintient votre monde académique connecté, d'un simple clic.",
+    "intro3": "NOTRE CR est une plateforme intelligente basée sur le web conçue pour faciliter le travail de chaque Représentant de Classe. De la gestion des listes d'étudiants et des horaires de classe à la publication d'annonces, de devoirs et à la gestion des problèmes des étudiants — NOTRE CR rassemble tout dans un tableau de bord simple.",
+    "missionTitle": "Notre Mission",
+    "missionDescription": "Notre mission est de connecter les nettoyeurs professionnels avec des hôtes vérifiés via une plateforme simple, sécurisée et transparente. Nous visons à rendre la gestion des emplois sans effort, assurer des paiements équitables et construire la confiance à chaque service terminé.",
+    "visionTitle": "Notre Vision",
+    "visionDescription": "Notre vision est de devenir une plateforme leader pour les services de nettoyage à la demande, permettant aux nettoyeurs indépendants de développer leur entreprise tout en fournissant aux hôtes des solutions de nettoyage fiables et de haute qualité dans le monde entier.",
+    "valuesTitle": "Nos Valeurs",
+    "valuesDescription": "Nous croyons à la confiance, à la transparence et au professionnalisme. Nous valorisons le travail équitable, les paiements sécurisés, une communication claire et le respect mutuel entre les nettoyeurs et les hôtes, assurant une expérience positive pour tous sur notre plateforme.",
+    "sectionTitle": "Mission, Vision & Valeurs",
+    "sectionDescription": "Notre mission est de connecter les nettoyeurs professionnels avec des hôtes vérifiés via une plateforme simple, sécurisée et transparente."
+  },
+  "Auth": {
+    "login": {
+      "title": "Connectez-vous à votre compte",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "forgotPassword": "Mot de passe oublié?",
+      "noAccount": "Vous n'avez pas de compte?",
+      "signUp": "S'inscrire"
+    },
+    "register": {
+      "title": "Créer un compte",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "haveAccount": "Vous avez déjà un compte?",
+      "signIn": "Se connecter"
+    }
+  },
+  "Navigation": {
+    "dashboard": "Tableau de bord",
+    "properties": "Propriétés",
+    "calendar": "Calendrier",
+    "jobs": "Emplois",
+    "chat": "Chat",
+    "profile": "Profil"
+  }
+}
