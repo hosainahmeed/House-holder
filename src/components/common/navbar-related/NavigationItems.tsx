@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { MenuItem } from './navigation';
 import { usePathname } from 'next/navigation';
-import { cn } from '@/app/lib/utils';
+import { cn } from '@/lib/utils';
 
 interface NavigationItemsProps {
     items: MenuItem[];

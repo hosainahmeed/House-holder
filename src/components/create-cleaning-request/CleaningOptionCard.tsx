@@ -1,4 +1,4 @@
-import { cn } from '@/app/lib/utils'
+import { cn } from '@/lib/utils'
 import { CleaningOption } from '@/types/property.types'
 import { Space, Typography } from 'antd'
 import { MapPin } from 'lucide-react'

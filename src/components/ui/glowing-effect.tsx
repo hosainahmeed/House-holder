@@ -1,7 +1,7 @@
 'use client';
 import { memo, useCallback, useEffect, useRef } from 'react';
 import { animate } from 'framer-motion';
-import { cn } from '@/app/lib/utils';
+import { cn } from '@/lib/utils';
 
 const GlowingEffect = memo(
   ({

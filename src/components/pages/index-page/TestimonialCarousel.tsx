@@ -2,7 +2,7 @@
 import React, { useState, useCallback, memo } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { cn } from '@/app/lib/utils';
+import { cn } from '@/lib/utils';
 import { IMAGE_CONSTANTS } from '@/assets/images/image.index';
 import TypographyDescription from '@/components/common/Typography';
 import { Typography } from '@/components/typography/typoGraphy';

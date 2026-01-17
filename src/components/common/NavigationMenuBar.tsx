@@ -9,7 +9,7 @@ import { Menu, X } from 'lucide-react';
 
 
 import Cookies from 'js-cookie';
-import { cn } from '@/app/lib/utils';
+import { cn } from '@/lib/utils';
 import { IMAGE_CONSTANTS } from '@/assets/images/image.index';
 import { NavigationItems } from './navbar-related/NavigationItems';
 import { ProfileAvatar } from './navbar-related/ProfileAvatar';

@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { Plus, Send, ChevronLeft, Menu } from "lucide-react";
-import { cn } from "@/app/lib/utils";
+import { cn } from "@/lib/utils";
 import ChatList from "@/components/chat/ChatList";
 import ChatWindow from "@/components/chat/ChatWindow";
 const Page = () => {
