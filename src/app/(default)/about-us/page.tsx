@@ -96,9 +96,9 @@ function page() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
                 {
                     data?.map((item) => (
-                        <Card>
+                        <Card key={item.title}>
                             <div className="flex flex-col items-center gap-4">
-                                <Image src={item.icon} alt="" width={50} height={50} />
+                                <Image src={item.icon} alt="icons" width={50} height={50} />
                                 <Typography variant="h3" className='text-black text-center font-semibold'>{item.title}</Typography>
                                 <Typography variant="body" className='text-[#64748B] text-center'>{item.description}</Typography>
                             </div>

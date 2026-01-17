@@ -177,7 +177,7 @@ export default function PropertyOverview() {
                 details_data.map((item)=>(
                   <div key={item.title} className="border border-gray-300 p-4 rounded-lg">
                     <p className="font-medium my-2 underline">{item.title}</p>
-                    <div className="">
+                    <div>
                       {item.work.map((work)=>(
                         <div key={work} className="my-2 flex gap-2 items-center">
                            <MdCheckBox />

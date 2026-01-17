@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { cn } from '@/app/lib/utils';
 import { ArrowBigLeftDashIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 // Types
 interface User {
@@ -118,9 +119,11 @@ const UserTooltip: React.FC<TooltipProps> = ({ user, position }) => {
             }}
         >
             <div className="flex items-center gap-3">
-                <img
+                <Image
                     src={user?.image}
                     alt={user?.name}
+                    width={40}
+                    height={40}
                     className="w-10 h-10 rounded-full"
                 />
                 <div className="flex-1 min-w-0">
@@ -168,9 +171,11 @@ const DayCell: React.FC<DayCellProps> = ({ day, achievement, onHover }) => {
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center overflow-hidden">
                         {achievement.user?.image ? (
-                            <img
+                            <Image
                                 src={achievement.user?.image}
                                 alt={achievement.user?.name}
+                                width={32}
+                                height={32}
                                 className="w-full h-full object-cover"
                             />
                         ) : (

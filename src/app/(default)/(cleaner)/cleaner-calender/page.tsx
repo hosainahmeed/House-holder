@@ -1,8 +1,7 @@
 'use client'
 
 import React, { useMemo, useState } from 'react'
-import { Tooltip, Empty } from 'antd'
-import Image from 'next/image'
+import { Empty } from 'antd'
 import WorkDetails from '@/components/cleaner-related/WorkDetails'
 import MonthSelector from '@/components/cleaner-related/MonthSelector'
 import { cn } from '@/app/lib/utils'
@@ -85,7 +84,7 @@ const data: MonthData[] = [
     {
         month: 'May',
         numberOfWork: 0,
-        workDetails:[]
+        workDetails: []
     },
     {
         month: 'June',

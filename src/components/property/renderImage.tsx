@@ -1,7 +1,8 @@
 import React from 'react'
 import { Modal } from "antd"
+import Image from 'next/image'
 
-export const renderImage = (images:string[]) => {
+export const renderImage = (images: string[]) => {
     const count = images.length
     if (count === 0) return null
     const gridClass =
@@ -13,7 +14,7 @@ export const renderImage = (images:string[]) => {
                     ? 'grid-cols-3'
                     : 'grid-cols-2'
 
-    const setShowAllImage = (images:string[]) => {
+    const setShowAllImage = (images: string[]) => {
         return new Promise((resolve) => {
             Modal.confirm({
                 content: (
@@ -22,7 +23,7 @@ export const renderImage = (images:string[]) => {
                             images?.map((img, index) => {
                                 return (
                                     <div className="w-full bg-gray-50 p-4 flex items-center justify-center rounded-md h-full object-cover" key={index}>
-                                        <img className="w-full h-full object-cover" src={img} alt={img} />
+                                        <Image width={400} height={400} className="w-full h-full object-cover" src={img} alt={img} />
                                     </div>
                                 )
                             })
@@ -48,7 +49,9 @@ export const renderImage = (images:string[]) => {
                         key={index}
                         className="relative w-full aspect-auto bg-gray-50 flex items-center justify-center overflow-hidden"
                     >
-                        <img
+                        <Image
+                            width={400}
+                            height={400}
                             src={img}
                             alt="post_image"
                             className="w-48 h-48 aspect-square object-contain"

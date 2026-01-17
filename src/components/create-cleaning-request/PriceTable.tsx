@@ -1,6 +1,6 @@
 import { PRICE_TABLE_DATA } from "@/constant/property.create"
 import { Space, Typography } from "antd"
-import { Clock, Sparkles } from "lucide-react"
+import { Sparkles } from "lucide-react"
 
 const { Text } = Typography
 export const PriceTable: React.FC = () => {
