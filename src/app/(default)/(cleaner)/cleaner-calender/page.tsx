@@ -4,7 +4,7 @@ import React, { useMemo, useState } from 'react'
 import { Empty } from 'antd'
 import WorkDetails from '@/components/cleaner-related/WorkDetails'
 import MonthSelector from '@/components/cleaner-related/MonthSelector'
-import { cn } from '@/app/lib/utils'
+import { cn } from '@/lib/utils'
 import BackButton from '@/components/ui/BackButton'
 
 export type Work = {

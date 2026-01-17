@@ -1,4 +1,4 @@
-import { cn } from '@/app/lib/utils';
+import { cn } from '@/lib/utils';
 import { HTMLAttributes, ElementType, ReactNode } from 'react';
 
 type TypographyVariant = 'h1' | 'h2' | 'h3' | 'subtitle' | 'body' | 'caption' | 'overline';

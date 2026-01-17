@@ -63,7 +63,7 @@ export default function Footer() {
                         <ul className="space-y-2">
                             <li className="flex items-start">
                                 <span className="text-black mr-2">▶</span>
-                                <Link href="/my-account" className="hover:underline">My Account</Link>
+                                <Link href="/my-profile-setting" className="hover:underline">My Account</Link>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-black mr-2">▶</span>

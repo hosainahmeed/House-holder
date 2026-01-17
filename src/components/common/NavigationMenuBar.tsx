@@ -9,7 +9,7 @@ import { Menu, X } from 'lucide-react';
 
 
 import Cookies from 'js-cookie';
-import { cn } from '@/app/lib/utils';
+import { cn } from '@/lib/utils';
 import { IMAGE_CONSTANTS } from '@/assets/images/image.index';
 import { NavigationItems } from './navbar-related/NavigationItems';
 import { ProfileAvatar } from './navbar-related/ProfileAvatar';
@@ -28,7 +28,7 @@ export const NavigationMenuBar = () => {
         name: 'Tanjim',
         email: 'tanjim@gmail.com',
         profile_image: 'https://placehold.co/600x400',
-        role: 'cleaner',
+        role: 'host',
         user: true
     }
 
@@ -163,10 +163,10 @@ export const NavigationMenuBar = () => {
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
-                        className="lg:hidden absolute top-full left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-lg"
+                        className="lg:hidden absolute overflow-y-auto min-h-screen top-full left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-lg"
                     >
                         <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                            <div className="flex flex-col space-y-4">
+                            <div className="flex flex-col">
                                 {menuItems.map((item, index) => (
                                     <motion.div
                                         key={item.label}
@@ -180,9 +180,9 @@ export const NavigationMenuBar = () => {
                                                     item.onPointerDown?.();
                                                     setIsMobileMenuOpen(false);
                                                 }}
-                                                className="w-full text-left text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-2 text-base"
+                                                className="w-full text-left flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-2 text-base"
                                             >
-                                                {item.label}
+                                                {item.icons && item.icons} {item.label}
                                             </button>
                                         ) : (
                                             <Link
@@ -198,39 +198,16 @@ export const NavigationMenuBar = () => {
                                     </motion.div>
                                 ))}
 
-                                {/* Mobile Auth Section */}
-                                <div className="pt-4 border-t border-gray-200">
-                                    {!profile?.user ? (
-                                        <div className="flex flex-col space-y-3">
-                                            <div onPointerDown={() => router.push("/my-profile-organizer")} className="flex items-center space-x-3 p-2">
-                                                <div
-                                                    className="w-8 h-8 bg-linear-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">
-                                                    {profile?.profile_image ? (
-                                                        <img
-                                                            src={profile?.profile_image}
-                                                            alt={profile?.name}
-                                                            className="w-full h-full rounded-full object-cover"
-                                                        />
-                                                    ) : (
-                                                        profile?.name.charAt(0).toUpperCase()
-                                                    )}
-                                                </div>
-                                                <span className="text-gray-700 font-medium">
-                                                    {profile?.name || profile?.email}
-                                                </span>
-                                            </div>
+
+                                <div className="border-t  border-gray-200">
+                                    {profile?.user ? (
+                                        <div className="flex  flex-col space-y-3">
                                             <ProfileDropdown
                                                 user={profile}
                                                 isOpen={isDropdownOpen}
                                                 onClose={() => handleToggleDropdown()}
                                                 onLogout={() => handleLogout()}
                                             />
-                                            <Button
-                                                onPointerDown={() => handleLogout()}
-                                                className="primary-btn px-6 py-2 rounded cursor-pointer"
-                                            >
-                                                Sign Out
-                                            </Button>
                                         </div>
                                     ) : (
                                         <div className="flex flex-col space-y-3">

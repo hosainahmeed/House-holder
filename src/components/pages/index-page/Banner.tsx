@@ -2,7 +2,6 @@
 import { IMAGE_CONSTANTS } from "@/assets/images/image.index";
 import { CleanIcon } from "@/components/svgs/cleanIcon";
 import { Typography } from "@/components/typography/typoGraphy";
-import { changeLanguage } from "@/utils/languageChanger";
 import { Button } from "antd";
 
 export default function Banner() {
@@ -20,7 +19,7 @@ export default function Banner() {
       <main className="container mx-auto flex flex-col gap-4 items-start justify-center h-full">
         <div className="flex gap-2  items-center">
           <CleanIcon width="44" height="44" fill="#111" />
-          <Typography className="text-[#323135] leading-none" variant="subtitle"> {changeLanguage("Find Cleaning Jobs Near You. Get Paid Securely.", "Trouvez des emplois de nettoyage près de chez vous. Paiement sécurisé.")}</Typography>
+          <Typography className="text-[#323135] leading-none" variant="subtitle">Find Cleaning Jobs Near You. Get Paid Securely.</Typography>
         </div>
         <Typography variant="h1" className="text-white max-w-3xl font-semibold">TURN YOUR CLEANING SKILLS INTO RELIABLE INCOME</Typography>
         <Typography variant="subtitle" className="text-[#323135] max-w-3xl font-semibold">Join a trusted platform that connects professional cleaners with verified hosts. Choose jobs near you, manage your schedule, and receive secure payments after every completed mission.</Typography>

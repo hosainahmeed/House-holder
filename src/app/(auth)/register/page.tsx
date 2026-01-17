@@ -100,7 +100,7 @@ export default function RegisterPage() {
         <div className="relative hidden lg:flex flex-col items-center justify-center bg-[#DBEBF7] text-white">
           <div className="absolute top-4 left-4 hidden lg:block">
             <Button
-              onClick={() => router.back()}
+              onClick={() => router.replace('/')}
               icon={<MdCancel />}
               size="middle"
               shape="circle"

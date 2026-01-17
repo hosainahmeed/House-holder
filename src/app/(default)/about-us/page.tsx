@@ -98,7 +98,11 @@ function page() {
                     data?.map((item) => (
                         <Card key={item.title}>
                             <div className="flex flex-col items-center gap-4">
+<<<<<<< HEAD
                                 <Image src={item.icon} alt="icons" width={50} height={50} />
+=======
+                                <Image src={item.icon} alt="About_Us_Icons" width={50} height={50} />
+>>>>>>> 5cd179a86c1704c56a771b44e04a8cb0ff7ceb5e
                                 <Typography variant="h3" className='text-black text-center font-semibold'>{item.title}</Typography>
                                 <Typography variant="body" className='text-[#64748B] text-center'>{item.description}</Typography>
                             </div>

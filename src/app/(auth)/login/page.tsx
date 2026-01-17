@@ -32,7 +32,7 @@ export default function LoginPage() {
               {/* Mobile back button */}
               <div className="absolute top-4 left-4 lg:hidden">
                 <Button
-                  onClick={() => router.back()}
+                  onClick={() => router.replace('/')}
                   icon={<MdCancel />}
                   size="middle"
                   type="text"

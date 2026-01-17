@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { cn } from '@/app/lib/utils';
+import { cn } from '@/lib/utils';
 import { ArrowBigLeftDashIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
