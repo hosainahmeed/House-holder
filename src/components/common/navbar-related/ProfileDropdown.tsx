@@ -16,17 +16,6 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
     const dropdownRef = useRef<HTMLDivElement>(null);
     const router = useRouter();
 
-    // useEffect(() => {
-    //     const handleClickOutside = (event: MouseEvent) => {
-    //         if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-    //             onClose();
-    //         }
-    //     };
-
-    //     document.addEventListener('mousedown', handleClickOutside);
-    //     return () => document.removeEventListener('mousedown', handleClickOutside);
-    // }, [onClose]);
-
     const handleNavigate = (path: string) => {
         router.push(path);
         onClose();
@@ -38,9 +27,9 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
             return [
                 { label: 'My Properties', icons: <Calendar size={20} />, onPointerDown: () => handleNavigate('/my-shortlisted-events') },
                 { label: 'Messages', icons: <MessageCircle size={20} />, onPointerDown: () => handleNavigate('/my-subscription') },
-                { label: 'My Profile & Setting', icons: <CgProfile size={20} />, onPointerDown: () => handleNavigate('/my-profile') },
-                { label: 'Favorite cleaner', icons: <GrFavorite size={20} />, onPointerDown: () => handleNavigate('/my-profile') },
-                { label: 'Transaction', icons: <LuChartNoAxesCombined size={20} />, onPointerDown: () => handleNavigate('/my-profile') },
+                { label: 'My Profile & Setting', icons: <CgProfile size={20} />, onPointerDown: () => handleNavigate('/my-profile-setting') },
+                { label: 'Favorite cleaner', icons: <GrFavorite size={20} />, onPointerDown: () => handleNavigate('/favorite-cleaner') },
+                { label: 'Transaction', icons: <LuChartNoAxesCombined size={20} />, onPointerDown: () => handleNavigate('/transaction') },
             ];
         }
 
@@ -48,7 +37,7 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
             return [
                 { label: 'My Jobs', icons: <BriefcaseBusiness />, onPointerDown: () => handleNavigate('/jobs') },
                 { label: 'Messages', icons: <MessageCircle size={20} />, onPointerDown: () => handleNavigate('/chat') },
-                { label: 'My Profile & Setting', icons: <CgProfile size={20} />, onPointerDown: () => handleNavigate('/my-profile') },
+                { label: 'My Profile & Setting', icons: <CgProfile size={20} />, onPointerDown: () => handleNavigate('/my-profile-setting') },
                 { label: 'Rating Review', icons: <Star size={20} />, onPointerDown: () => handleNavigate('/all-review') },
                 { label: 'My Income', icons: <LuChartNoAxesCombined size={20} />, onPointerDown: () => handleNavigate('/my-income') },
             ];
@@ -67,16 +56,18 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute hidden lg:block right-0 top-full mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+                        className="absolute hidden lg:block right-0 top-full mt-2 w-80 bg-white  rounded-lg shadow-lg border border-gray-200 z-50"
                     >
                         {/* User Info Section */}
                         <div className="p-4 border-b border-gray-100">
                             <div className="flex items-center space-x-3">
                                 <div className="w-12 h-12 bg-linear-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
                                     {profile?.profile_image ? (
-                                        <img
+                                        <Image
                                             src={profile?.profile_image}
                                             alt={profile?.name}
+                                            width={40}
+                                            height={40}
                                             className="w-full h-full rounded-full object-cover"
                                         />
                                     ) : (
@@ -101,7 +92,7 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: index * 0.1 }}
                                     onPointerDown={item.onPointerDown}
-                                    className="w-full flex cursor-pointer items-center gap-2 text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md transition-colors duration-200"
+                                    className="w-full flex cursor-pointer items-center gap-2 text-left py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md transition-colors duration-200"
                                 >
                                     {item?.icons}  {item.label}
                                 </motion.button>
@@ -115,7 +106,7 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.3 }}
                                 onPointerDown={onLogout}
-                                className="w-full flex items-center gap-2 text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md transition-colors duration-200 font-medium"
+                                className="w-full flex items-center gap-2 text-left  py-2 text-sm text-red-600 hover:bg-red-50 rounded-md transition-colors duration-200 font-medium"
                             >
                                 <LogOut className="w-5 h-5" />   Sign Out
                             </motion.button>
@@ -123,8 +114,8 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
                     </motion.div>
                 )}
             </AnimatePresence>
-            <div className="lg:hidden">
-                <div className="p-2">
+            <div className="lg:hidden ">
+                <div className="pb-12">
                     {menuItems.map((item: any, index: number) => (
                         <motion.button
                             key={item.label}
@@ -132,11 +123,22 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
                             onPointerDown={item.onPointerDown}
-                            className="w-full flex cursor-pointer items-center gap-2 text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md transition-colors duration-200"
+                            className="w-full flex cursor-pointer items-center gap-2 text-left  py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md transition-colors duration-200"
                         >
-                            <Image src={item.icons} width={20} height={20} alt={item.label} />  {item.label}
+                            {item.icons && item.icons}  {item.label}
                         </motion.button>
                     ))}
+                </div>
+                <div className="border-t border-gray-100">
+                    <motion.button
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 }}
+                        onPointerDown={onLogout}
+                        className="w-full flex items-center gap-2 text-left  py-2 text-sm text-red-600 hover:bg-red-50 rounded-md transition-colors duration-200 font-medium"
+                    >
+                        <LogOut className="w-5 h-5" />   Sign Out
+                    </motion.button>
                 </div>
             </div>
         </div>
