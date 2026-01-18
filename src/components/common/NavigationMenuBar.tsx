@@ -14,9 +14,18 @@ import { IMAGE_CONSTANTS } from '@/assets/images/image.index';
 import { NavigationItems } from './navbar-related/NavigationItems';
 import { ProfileAvatar } from './navbar-related/ProfileAvatar';
 import { ProfileDropdown } from './navbar-related/ProfileDropdown';
-import { HOST_USER_MENU_ITEMS, NON_USER_MENU_ITEMS, ORGANIZER_MENU_ITEMS } from './navbar-related/navigation';
+// import { HOST_USER_MENU_ITEMS, NON_USER_MENU_ITEMS, ORGANIZER_MENU_ITEMS } from './navbar-related/navigation';
 import { AuthButtons } from './navbar-related/AuthButtons';
-import { Button } from 'antd';
+import { useTranslations } from "next-intl";
+
+export interface MenuItem {
+    label: string;
+    href: string;
+    onPointerDown?: () => void;
+    icons?: string;
+}
+
+
 
 export const NavigationMenuBar = () => {
 
@@ -24,6 +33,9 @@ export const NavigationMenuBar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const router = useRouter()
     const pathname = usePathname();
+
+    const t = useTranslations('Navigation')
+
     const profile: any = {
         name: 'Tanjim',
         email: 'tanjim@gmail.com',
@@ -35,6 +47,28 @@ export const NavigationMenuBar = () => {
     // if (isLoading) {
     //     <div className="h-20 bg-white/80 backdrop-blur-md border-b border-gray-200 supports-backdrop-blur:bg-white/60"></div>
     // }
+
+    const NON_USER_MENU_ITEMS: MenuItem[] = [
+        { label: t("home"), href: '/' },
+        { label: t("aboutUs"), href: '/about-us' },
+        { label: t("contactUs"), href: '/contact-us' },
+        { label: t("faq"), href: '/faq' },
+    ];
+
+    const ORGANIZER_MENU_ITEMS: MenuItem[] = [
+        { label: t("home"), href: '/' },
+        { label: 'Jobs', href: '/jobs' },
+        { label: 'Calendar', href: '/cleaner-calender' },
+        { label: 'Contact Us', href: '/contact-us' },
+    ];
+
+    const HOST_USER_MENU_ITEMS: MenuItem[] = [
+        { label: t("home"), href: '/' },
+        { label: 'Properties', href: '/properties' },
+        { label: 'Calendar', href: '/calendar' },
+        { label: 'Contact Us', href: '/contact-us' },
+    ];
+
 
     useEffect(() => {
         setIsMobileMenuOpen(false);
@@ -123,7 +157,6 @@ export const NavigationMenuBar = () => {
                             </div>
                         )}
                     </div>
-
                     {/* Mobile Menu Button */}
                     <button
                         onPointerDown={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

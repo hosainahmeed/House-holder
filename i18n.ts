@@ -8,9 +8,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   if (!locale || !['en', 'fr'].includes(locale)) {
     locale = 'en';
   }
-
-  console.log(locale)
-
+  
   return {
     locale,
     messages: (await import(`./messages/${locale}.json`)).default,

@@ -63,11 +63,41 @@
     }
   },
   "Navigation": {
+    "home": "Maison",
     "dashboard": "Tableau de bord",
     "properties": "Propriétés",
     "calendar": "Calendrier",
     "jobs": "Emplois",
     "chat": "Chat",
-    "profile": "Profil"
+    "profile": "Profil",
+    "aboutUs": "À propos de nous",
+    "contactUs": "Contactez-nous",
+    "faq": "FAQ"
+  },
+  "LanguageSettings": {
+    "title": "Paramètres de langue",
+    "chooseLanguage": "Choisissez votre langue",
+    "languageDescription": "Sélectionnez votre langue préférée pour l'interface de l'application",
+    "english": "Anglais",
+    "french": "Français",
+    "languageChanged": "Langue changée en {language}",
+    "note": "Changer la langue mettra à jour tous les textes de l'application. Il se peut que certains contenus nécessitent un rafraîchissement de la page pour s'afficher dans la langue sélectionnée."
+  },
+  "Footer": {
+    "contactUs": "Contactez-nous",
+    "description":"Donner aux parents, aux tuteurs et aux élèves les moyens d'agir grâce à une plateforme d'apprentissage intelligente et transparente",
+    "address": "111 Mohakhali, Dhaka, DH 1515, Bangladesh.",
+    "email": "bdcalling@gmail.com",
+    "phone": "+88015-88888-9999",
+    "account": "Compte",
+    "myAccount": "Mon Compte",
+    "loginRegister": "Connexion / Inscription",
+    "quickLinks": "Liens Rapides",
+    "aboutUs": "À propos",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsConditions": "Conditions générales",
+    "faq": "FAQ",
+    "copyright": "© {year} Votre Nom d'Entreprise. Tous droits réservés.",
+    "support": "soutien"
   }
 }

@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+    const t = useTranslations("Footer");
     const pathname = usePathname();
     if (pathname === "/chat") {
         return null;
@@ -20,7 +22,7 @@ export default function Footer() {
                             <Image src={IMAGE_CONSTANTS.brandLogo} alt="Logo" width={80} height={80} className="rounded-lg" />
                         </div>
                         <p className="text-gray-300 text-sm">
-                            Empowering parents, tutors, and students through a smart and transparent learning platform
+                            {t("description")}
                         </p>
                         <div className="flex space-x-4 pt-2">
                             <Link href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors">
@@ -40,34 +42,34 @@ export default function Footer() {
 
                     {/* Support */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">Support</h3>
+                        <h3 className="text-lg font-semibold mb-4">{t("support")}</h3>
                         <ul className="space-y-2">
                             <li className="flex items-start">
                                 <span className="text-black mr-2">▶</span>
-                                <span>111 Mohakhali, Dhaka, DH 1515, Bangladesh.</span>
+                                <span>{t("address")}</span>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-black mr-2">▶</span>
-                                <Link href="mailto:bdcalling@gmail.com" className="hover:underline">bdcalling@gmail.com</Link>
+                                <Link href="mailto:bdcalling@gmail.com" className="hover:underline">{t("email")}</Link>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-black mr-2">▶</span>
-                                <Link href="tel:+88015888889999" className="hover:underline">+88015-88888-9999</Link>
+                                <Link href="tel:+88015888889999" className="hover:underline">{t("phone")}</Link>
                             </li>
                         </ul>
                     </div>
 
                     {/* Account */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">Account</h3>
+                        <h3 className="text-lg font-semibold mb-4">{t("account")}</h3>
                         <ul className="space-y-2">
                             <li className="flex items-start">
                                 <span className="text-black mr-2">▶</span>
-                                <Link href="/my-profile-setting" className="hover:underline">My Account</Link>
+                                <Link href="/my-profile-setting" className="hover:underline">{t("myAccount")}</Link>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-black mr-2">▶</span>
-                                <Link href="/login" className="hover:underline">Login / Register</Link>
+                                <Link href="/login" className="hover:underline">{t("loginRegister")}</Link>
                             </li>
                         </ul>
                     </div>
@@ -78,19 +80,19 @@ export default function Footer() {
                         <ul className="space-y-2">
                             <li className="flex items-start">
                                 <span className="text-black mr-2">▶</span>
-                                <Link href="/about-us" className="hover:underline">About Us</Link>
+                                <Link href="/about-us" className="hover:underline">{t("aboutUs")}</Link>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-black mr-2">▶</span>
-                                <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
+                                <Link href="/privacy" className="hover:underline">{t("privacyPolicy")}</Link>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-black mr-2">▶</span>
-                                <Link href="/terms" className="hover:underline">Terms & Conditions</Link>
+                                <Link href="/terms" className="hover:underline">{t("termsConditions")}</Link>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-black mr-2">▶</span>
-                                <Link href="/faq" className="hover:underline">FAQ</Link>
+                                <Link href="/faq" className="hover:underline">{t("faq")}</Link>
                             </li>
                         </ul>
                     </div>
@@ -98,7 +100,7 @@ export default function Footer() {
 
                 {/* Copyright */}
                 <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-                    <p>© {new Date().getFullYear()} Your Company Name. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} Household. All rights reserved.</p>
                 </div>
             </div>
         </footer>

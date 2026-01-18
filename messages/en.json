@@ -63,11 +63,41 @@
     }
   },
   "Navigation": {
+    "home": "Home",
     "dashboard": "Dashboard",
     "properties": "Properties",
     "calendar": "Calendar",
     "jobs": "Jobs",
     "chat": "Chat",
-    "profile": "Profile"
+    "profile": "Profile",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "faq": "FAQ"
+  },
+  "LanguageSettings": {
+    "title": "Language Settings",
+    "chooseLanguage": "Choose Your Language",
+    "languageDescription": "Select your preferred language for the application interface",
+    "english": "English",
+    "french": "French",
+    "languageChanged": "Language changed to {language}",
+    "note": "Changing the language will update all text throughout the application. Some content may require a page refresh to display in the selected language."
+  },
+  "Footer": {
+    "contactUs": "Contact Us",
+    "address": "111 Mohakhali, Dhaka, DH 1515, Bangladesh.",
+    "email": "bdcalling@gmail.com",
+    "description": "Empowering parents, guardians, and students through a smart and transparent learning platform",
+    "phone": "+88015-88888-9999",
+    "account": "Account",
+    "myAccount": "My Account",
+    "loginRegister": "Login / Register",
+    "quickLinks": "Quick Links",
+    "aboutUs": "About Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions",
+    "faq": "FAQ",
+    "copyright": "© {year} Your Company Name. All rights reserved.",
+    "support": "Support"
   }
 }

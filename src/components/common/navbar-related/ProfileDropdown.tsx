@@ -26,7 +26,7 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
         if (user?.role === 'host') {
             return [
                 { label: 'My Properties', icons: <Calendar size={20} />, onPointerDown: () => handleNavigate('/my-shortlisted-events') },
-                { label: 'Messages', icons: <MessageCircle size={20} />, onPointerDown: () => handleNavigate('/my-subscription') },
+                { label: 'Messages', icons: <MessageCircle size={20} />, onPointerDown: () => handleNavigate('/chat') },
                 { label: 'My Profile & Setting', icons: <CgProfile size={20} />, onPointerDown: () => handleNavigate('/my-profile-setting') },
                 { label: 'Favorite cleaner', icons: <GrFavorite size={20} />, onPointerDown: () => handleNavigate('/favorite-cleaner') },
                 { label: 'Transaction', icons: <LuChartNoAxesCombined size={20} />, onPointerDown: () => handleNavigate('/transaction') },
