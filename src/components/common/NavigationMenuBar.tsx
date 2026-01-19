@@ -40,8 +40,8 @@ export const NavigationMenuBar = () => {
         name: 'Tanjim',
         email: 'tanjim@gmail.com',
         profile_image: 'https://placehold.co/600x400',
-        role: '',
-        user: false
+        role: 'host',
+        user: true
     }
 
     // if (isLoading) {
