@@ -9,6 +9,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { MdCancel } from 'react-icons/md';
 import { PlusOutlined, LoadingOutlined } from '@ant-design/icons';
+import { useTranslations } from 'next-intl';
 
 const { Content } = Layout;
 
@@ -26,7 +27,9 @@ export default function RegisterPage() {
   const [loading, setLoading] = useState(false);
   const [profileFile, setProfileFile] = useState<File | null>(null);
   const role = useSearchParams();
-  console.log(role.get('role'));
+
+  const t = useTranslations("Auth.register")
+  const loginT = useTranslations("Auth.login")
 
   const handleSubmit = async (values: LoginData) => {
     if (!profileFile) {
@@ -122,8 +125,8 @@ export default function RegisterPage() {
           <div className="w-full">
             <Space orientation="vertical" size="large" style={{ width: '100%' }}>
               <div>
-                <Typography variant='h3' className='text-gray-800'>Create Account!</Typography>
-                <Typography variant='caption' className='text-gray-400'>Please enter your information to create account</Typography>
+                <Typography variant='h3' className='text-gray-800'>{t("title")}</Typography>
+                <Typography variant='caption' className='text-gray-400'>{t("description")}</Typography>
               </div>
 
               <Form
@@ -158,19 +161,19 @@ export default function RegisterPage() {
                 </Form.Item>
 
                 <Form.Item
-                  label="Name"
+                  label={t("name")}
                   style={{ marginBottom: 16 }}
                   name="name"
                   rules={[{ required: true, message: 'Please enter your name!' }]}
                 >
                   <Input
-                    placeholder="Please enter your name"
+                    placeholder={t("name_placeholder")}
                     size="large"
                   />
                 </Form.Item>
 
                 <Form.Item
-                  label="Email"
+                  label={loginT("email")}
                   style={{ marginBottom: 16 }}
                   name="email"
                   rules={[
@@ -179,13 +182,13 @@ export default function RegisterPage() {
                   ]}
                 >
                   <Input
-                    placeholder="Please enter your email address"
+                    placeholder={loginT("email_placeholder")}
                     size="large"
                   />
                 </Form.Item>
 
                 <Form.Item
-                  label="Password"
+                  label={loginT("password")}
                   style={{ marginBottom: 8 }}
                   name="password"
                   rules={[
@@ -194,13 +197,13 @@ export default function RegisterPage() {
                   ]}
                 >
                   <Input.Password
-                    placeholder="Please enter your password"
+                    placeholder={loginT("password_placeholder")}
                     size="large"
                   />
                 </Form.Item>
 
                 <Form.Item
-                  label="Confirm Password"
+                  label={t("confirmPassword")}
                   style={{ marginBottom: 8 }}
                   name="confirmPassword"
                   rules={[
@@ -216,31 +219,24 @@ export default function RegisterPage() {
                   ]}
                 >
                   <Input.Password
-                    placeholder="Please confirm your password"
+                    placeholder={t("confirm_password_placeholder")}
                     size="large"
                   />
                 </Form.Item>
-
-                <div style={{ textAlign: 'right', marginBottom: 24 }}>
-                  <Link href="/auth/sign-in/forget-pass-email" style={{ color: '#666', fontSize: '14px' }}>
-                    Forget password?
-                  </Link>
+                <div style={{ textAlign: 'center', marginTop: 24 }}>
+                  <Typography variant='h3' style={{ fontSize: '14px' }}>
+                    {t("haveAccount")} <Link href="/login" style={{ color: '#0072C3' }}>{loginT("signIn")}</Link>
+                  </Typography>
                 </div>
-
                 <Button
                   htmlType="submit"
                   size="large"
                   block
                   style={{ backgroundColor: '#0072C3', color: 'white' }}
                 >
-                  Sign up
+                  {t("signUp")}
                 </Button>
 
-                <div style={{ textAlign: 'center', marginTop: 24 }}>
-                  <Typography variant='h3' style={{ fontSize: '14px' }}>
-                    Already have an account? <Link href="/login" style={{ color: '#0072C3' }}>Sign in</Link>
-                  </Typography>
-                </div>
               </Form>
             </Space>
           </div>

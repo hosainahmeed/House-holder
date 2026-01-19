@@ -1,4 +1,5 @@
 import { IMAGE_CONSTANTS } from '@/assets/images/image.index';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -55,11 +56,12 @@ export const apartments = [
 
 function Page() {
   // Example dynamic data array
+  const t = useTranslations("Navigation");
 
 
   return (
     <div className="container mx-auto py-4 space-y-4">
-      <h1 className="text-3xl font-semibold text-black">Calendar</h1>
+      <h1 className="text-3xl font-semibold text-black">{t("calendar")}</h1>
       {apartments.map((apt) => (
         <div
           key={apt.id}

@@ -75,11 +75,8 @@ export const NavigationMenuBar = () => {
     }, [pathname]);
 
     const handleLogout = useCallback(() => {
-        Cookies.remove('accessTokenForPlayFinder')
-        if (window !== undefined) {
-            window.location.reload()
-        }
-    }, []);
+       router.push("/login");
+    }, [router]);
 
     const handleToggleDropdown = useCallback(() => {
         setIsDropdownOpen(!isDropdownOpen);

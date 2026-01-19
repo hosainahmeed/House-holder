@@ -1,50 +1,90 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { BriefcaseBusiness, Calendar, icons, LogOut, MessageCircle, Settings, Star } from 'lucide-react';
-import { useRef, useEffect } from 'react';
+import { BriefcaseBusiness, Calendar, LogOut, MessageCircle, Star } from 'lucide-react';
+import { useRef } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { ICONS } from '@/assets/icons/index.icons';
 import { CgProfile } from 'react-icons/cg';
 import { GrFavorite } from 'react-icons/gr';
 import { LuChartNoAxesCombined } from 'react-icons/lu';
-import { MdReviews } from 'react-icons/md';
+import { useTranslations } from 'next-intl';
 
 
 export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: any) => {
     const dropdownRef = useRef<HTMLDivElement>(null);
     const router = useRouter();
+    const t = useTranslations("menu");
 
     const handleNavigate = (path: string) => {
         router.push(path);
         onClose();
     };
 
-
     const getMenuItems = () => {
         if (user?.role === 'host') {
             return [
-                { label: 'My Properties', icons: <Calendar size={20} />, onPointerDown: () => handleNavigate('/my-shortlisted-events') },
-                { label: 'Messages', icons: <MessageCircle size={20} />, onPointerDown: () => handleNavigate('/chat') },
-                { label: 'My Profile & Setting', icons: <CgProfile size={20} />, onPointerDown: () => handleNavigate('/my-profile-setting') },
-                { label: 'Favorite cleaner', icons: <GrFavorite size={20} />, onPointerDown: () => handleNavigate('/favorite-cleaner') },
-                { label: 'Transaction', icons: <LuChartNoAxesCombined size={20} />, onPointerDown: () => handleNavigate('/transaction') },
+                {
+                    label: t("host.my_properties"),
+                    icons: <Calendar size={20} />,
+                    onPointerDown: () => handleNavigate('/my-shortlisted-events')
+                },
+                {
+                    label: t("host.messages"),
+                    icons: <MessageCircle size={20} />,
+                    onPointerDown: () => handleNavigate('/chat')
+                },
+                {
+                    label: t("host.profile_settings"),
+                    icons: <CgProfile size={20} />,
+                    onPointerDown: () => handleNavigate('/my-profile-setting')
+                },
+                {
+                    label: t("host.favorite_cleaner"),
+                    icons: <GrFavorite size={20} />,
+                    onPointerDown: () => handleNavigate('/favorite-cleaner')
+                },
+                {
+                    label: t("host.transactions"),
+                    icons: <LuChartNoAxesCombined size={20} />,
+                    onPointerDown: () => handleNavigate('/transaction')
+                },
             ];
         }
 
         if (user?.role === 'cleaner') {
             return [
-                { label: 'My Jobs', icons: <BriefcaseBusiness />, onPointerDown: () => handleNavigate('/jobs') },
-                { label: 'Messages', icons: <MessageCircle size={20} />, onPointerDown: () => handleNavigate('/chat') },
-                { label: 'My Profile & Setting', icons: <CgProfile size={20} />, onPointerDown: () => handleNavigate('/my-profile-setting') },
-                { label: 'Rating Review', icons: <Star size={20} />, onPointerDown: () => handleNavigate('/all-review') },
-                { label: 'My Income', icons: <LuChartNoAxesCombined size={20} />, onPointerDown: () => handleNavigate('/my-income') },
+                {
+                    label: t("cleaner.my_jobs"),
+                    icons: <BriefcaseBusiness />,
+                    onPointerDown: () => handleNavigate('/jobs')
+                },
+                {
+                    label: t("cleaner.messages"),
+                    icons: <MessageCircle size={20} />,
+                    onPointerDown: () => handleNavigate('/chat')
+                },
+                {
+                    label: t("cleaner.profile_settings"),
+                    icons: <CgProfile size={20} />,
+                    onPointerDown: () => handleNavigate('/my-profile-setting')
+                },
+                {
+                    label: t("cleaner.rating_review"),
+                    icons: <Star size={20} />,
+                    onPointerDown: () => handleNavigate('/all-review')
+                },
+                {
+                    label: t("cleaner.my_income"),
+                    icons: <LuChartNoAxesCombined size={20} />,
+                    onPointerDown: () => handleNavigate('/my-income')
+                },
             ];
         }
 
         return [];
     };
+
     const menuItems = getMenuItems()
     return (
         <div>
@@ -100,7 +140,11 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
                         </div>
 
                         {/* Sign Out Section */}
-                        <div className="p-2 border-t border-gray-100">
+                        <div
+                            onClick={() => {
+                                router.push("/login");
+                            }}
+                            className="p-2 border-t border-gray-100">
                             <motion.button
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -129,7 +173,9 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
                         </motion.button>
                     ))}
                 </div>
-                <div className="border-t border-gray-100">
+                <div onClick={() => {
+                    router.push("/login");
+                }} className="border-t border-gray-100">
                     <motion.button
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}

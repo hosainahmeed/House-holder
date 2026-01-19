@@ -76,7 +76,7 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">Quick Link</h3>
+                        <h3 className="text-lg font-semibold mb-4">{t("quickLinks")}</h3>
                         <ul className="space-y-2">
                             <li className="flex items-start">
                                 <span className="text-black mr-2">▶</span>

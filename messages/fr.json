@@ -3,6 +3,7 @@
     "home": "Accueil",
     "aboutUs": "À propos",
     "contactUs": "Contactez-nous",
+    "contactUsDescription": "Notre mission est de simplifier la gestion des emplois, d'assurer des paiements sécurisés et d'aider les nettoyeurs indépendants à développer leur entreprise en toute confiance.",
     "login": "Connexion",
     "register": "S'inscrire",
     "logout": "Déconnexion",
@@ -16,7 +17,19 @@
     "error": "Une erreur s'est produite",
     "success": "Succès!",
     "explore": "Explorer",
-    "join-as-host": "Rejoignez-nous en tant que nettoyeur"
+    "join-as-host": "Rejoignez-nous en tant que nettoyeur",
+    "my_propertie": "Mes propriétés",
+    "create_cleaning_request": "Créer une demande de ménage",
+    "add_propertise": "Ajouter des propriétés",
+    "chambre": "Chambre",
+    "salleDeBain": "Salle de bain",
+    "bed": "Lit",
+    "bath": "Salle de bain",
+    "m2": "m²",
+    "bed_rooms": "Chambres à coucher",
+    "location": "Emplacement",
+    "contactEmail": "Email de contact",
+    "contactPhone": "Téléphone de contact"
   },
   "HomePage": {
     "title": "Bienvenue sur AirHousehold",
@@ -51,17 +64,28 @@
       "password": "Mot de passe",
       "forgotPassword": "Mot de passe oublié?",
       "noAccount": "Vous n'avez pas de compte?",
-      "signUp": "S'inscrire"
+      "welcomeBack": "Content de te revoir!",
+      "loginDescription": "Veuillez entrer vos informations pour vous connecter à votre compte",
+      "signIn": "Se connecter",
+      "new_here": "Nouveau ici ?",
+      "email_placeholder": "Entrez votre adresse e-mail",
+      "password_placeholder": "Entrez votre mot de passe",
+      "new_account": " Créez un compte"
     },
     "register": {
-      "title": "Créer un compte",
+      "title": "Créer un compte!",
       "firstName": "Prénom",
+      "description": "Veuillez saisir vos informations pour créer un compte.",
+      "signUp": "S'inscrire",
       "lastName": "Nom",
       "email": "E-mail",
       "password": "Mot de passe",
       "confirmPassword": "Confirmer le mot de passe",
       "haveAccount": "Vous avez déjà un compte?",
-      "signIn": "Se connecter"
+      "name": "Nom",
+      "photo": "Photo",
+      "name_placeholder": "Veuillez entrer votre nom",
+      "confirm_password_placeholder": "Veuillez confirmer votre mot de passe"
     }
   },
   "Navigation": {
@@ -179,5 +203,21 @@
     "title": "Ce que disent nos utilisateurs",
     "target": "Utilisateurs",
     "description": "Découvrez comment les hôtes et les nettoyeurs professionnels utilisent notre plateforme pour simplifier la planification, garantir un service fiable et profiter de paiements sécurisés et sans stress."
+  },
+  "menu": {
+    "host": {
+      "my_properties": "Mes propriétés",
+      "messages": "Messages",
+      "profile_settings": "Mon profil et paramètres",
+      "favorite_cleaner": "Agents de nettoyage favoris",
+      "transactions": "Transactions"
+    },
+    "cleaner": {
+      "my_jobs": "Mes missions",
+      "messages": "Messages",
+      "profile_settings": "Mon profil et paramètres",
+      "rating_review": "Notes et avis",
+      "my_income": "Mes revenus"
+    }
   }
 }

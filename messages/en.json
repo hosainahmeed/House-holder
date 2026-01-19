@@ -3,6 +3,7 @@
     "home": "Home",
     "aboutUs": "About Us",
     "contactUs": "Contact Us",
+    "contactUsDescription": "Our mission is to simplify job management, ensure secure payments, and help independent cleaners grow their business with confidence.",
     "login": "Login",
     "register": "Register",
     "logout": "Logout",
@@ -16,7 +17,17 @@
     "error": "An error occurred",
     "success": "Success!",
     "explore": "Explore",
-    "join-as-host": "Join as Host"
+    "join-as-host": "Join as Host",
+    "my_propertie": "My Properties",
+    "create_cleaning_request": "Create Cleaning Request",
+    "add_propertise": "Add Properties",
+    "bed": "Bed",
+    "bath": "Bath",
+    "m2": "Sqft",
+    "bed_rooms": "Bedrooms",
+    "location": "Location",
+    "contactEmail": "Contact Email",
+    "contactPhone": "Contact Phone"
   },
   "HomePage": {
     "title": "Welcome to AirHousehold",
@@ -49,19 +60,30 @@
       "title": "Login to your account",
       "email": "Email",
       "password": "Password",
+      "email_placeholder": "Enter your email address",
+      "password_placeholder": "Enter your password",
       "forgotPassword": "Forgot password?",
       "noAccount": "Don't have an account?",
-      "signUp": "Sign up"
+      "signIn": "Sign in",
+      "welcomeBack": "Welcome Back!",
+      "loginDescription": "Please enter your information to sign in to your account",
+      "new_here": "New here?",
+      "new_account": "Create a new account"
     },
     "register": {
-      "title": "Create an account",
+      "title": "Create an account!",
+      "description":"Please enter your information to create account",
       "firstName": "First Name",
       "lastName": "Last Name",
       "email": "Email",
       "password": "Password",
       "confirmPassword": "Confirm Password",
       "haveAccount": "Already have an account?",
-      "signIn": "Sign in"
+      "signUp": "Sign up",
+      "name":"Name",
+      "photo":"Photo",
+      "name_placeholder" : "Please enter your name",
+      "confirm_password_placeholder":"Please confirm your password"
     }
   },
   "Navigation": {
@@ -179,5 +201,21 @@
     "title": "What Our Users Say",
     "target": "Users Say",
     "description": "Discover how hosts and professional cleaners use our platform to simplify scheduling, ensure reliable service, and enjoy secure, stress-free payments."
+  },
+  "menu": {
+    "host": {
+      "my_properties": "My Properties",
+      "messages": "Messages",
+      "profile_settings": "My Profile & Settings",
+      "favorite_cleaner": "Favorite Cleaners",
+      "transactions": "Transactions"
+    },
+    "cleaner": {
+      "my_jobs": "My Jobs",
+      "messages": "Messages",
+      "profile_settings": "My Profile & Settings",
+      "rating_review": "Ratings & Reviews",
+      "my_income": "My Income"
+    }
   }
 }

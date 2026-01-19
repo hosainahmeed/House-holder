@@ -4,6 +4,7 @@ import ContactForm from '@/components/form/ContactForm';
 import { Typography } from '@/components/typography/typoGraphy';
 import { Card } from 'antd';
 import { Metadata } from 'next';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import React from 'react'
 
@@ -54,27 +55,28 @@ const Phone = () => {
 
 
 function ContactPage() {
+  const t = useTranslations("Common")
 
   const data = [
     {
-      title: 'contact Email',
+      title: t('contactEmail'),
       icon: <MailBox />,
       description: 'support@ourcr.com',
     },
     {
-      title: 'Location',
+      title: t('location'),
       icon: <Location />,
       description: 'Mohakhali, Dhaka, Bangladesh',
     },
     {
-      title: 'Contact Phone',
+      title: t('contactPhone'),
       icon: <Phone />,
       description: '+880 1700-000000',
     }
   ]
   return (
     <div className="min-h-dvh pb-28">
-      <PageTopBanner title='Contact Us' description='Our mission is to simplify job management, ensure secure payments, and help independent cleaners grow their business with confidence.' />
+      <PageTopBanner title={t("contactUs")} description={t("contactUsDescription")} />
       <div className="container  mx-auto px-4 py-8">
         <div className="grid bg-[#e6ecf5] shadow-lg rounded-2xl lg:grid-cols-12 gap-8 max-w-6xl mx-auto">
           {/* Left Sidebar - Green Section */}

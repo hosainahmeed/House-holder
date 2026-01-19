@@ -4,6 +4,7 @@ import UserProfileShow from '../common/UserProfileShow';
 import { Button, Tooltip, message } from 'antd';
 import { IoTrash } from 'react-icons/io5';
 import ReviewModal from '../common/ReviewModal';
+import { useTranslations } from 'next-intl';
 
 interface PropertyCardProps {
   id?: string;
@@ -28,10 +29,10 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   image = "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
   date = "Vendredi 15th December",
   title = "Francisco",
-  area = "20-500 m²",
-  beds = "2 Bed",
-  bedrooms = "2 Bedroom",
-  bathrooms = "2 Bathroom",
+  area = "20-500",
+  beds = "2",
+  bedrooms = "2",
+  bathrooms = "2",
   time = "10:00-16:00",
   visitDate = "Vendredi 15th December",
   location = "e.g. B. Berlin or Peak Fit...",
@@ -39,6 +40,8 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   status,
   onclick,
 }) => {
+
+  const t = useTranslations("Common")
 
   const [isReviewModalVisible, setIsReviewModalVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -92,19 +95,19 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
           <div className="flex flex-wrap items-center gap-4 py-2 border-b border-gray-100">
             <div className="flex items-center gap-1.5 text-gray-600" title="Area">
               <Maximize2 className="w-4 h-4" />
-              <span className="text-sm">({area})</span>
+              <span className="text-sm">({area} {t("m2")})</span>
             </div>
             <div className="flex items-center gap-1.5 text-gray-600" title="Beds">
               <Bed className="w-4 h-4" />
-              <span className="text-sm">{beds}</span>
+              <span className="text-sm">{beds} {t("bed")}</span>
             </div>
             <div className="flex items-center gap-1.5 text-gray-600" title="Bedrooms">
               <BedDouble className="w-4 h-4" />
-              <span className="text-sm">{bedrooms}</span>
+              <span className="text-sm">{bedrooms} {t("bed_rooms")}</span>
             </div>
             <div className="flex items-center gap-1.5 text-gray-600" title="Bathrooms">
               <Bath className="w-4 h-4" />
-              <span className="text-sm">{bathrooms}</span>
+              <span className="text-sm">{bathrooms} {t("bath")}</span>
             </div>
           </div>
 
