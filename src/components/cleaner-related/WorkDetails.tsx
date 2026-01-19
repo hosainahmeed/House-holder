@@ -1,5 +1,6 @@
 'use client'
-import { Work } from "@/app/(default)/(cleaner)/cleaner-calender/page";
+
+import { Work } from "@/app/[locale]/(default)/(cleaner)/cleaner-calender/page";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 

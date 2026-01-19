@@ -1,4 +1,5 @@
-import { MonthData } from "@/app/(default)/(cleaner)/cleaner-calender/page"
+
+import { MonthData } from "@/app/[locale]/(default)/(cleaner)/cleaner-calender/page"
 import { cn } from "@/lib/utils"
 import { Tooltip } from "antd"
 
