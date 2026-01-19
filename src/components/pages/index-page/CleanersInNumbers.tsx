@@ -3,31 +3,34 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function CleanersInNumbers() {
+    const t = useTranslations("cleaners-in-numbers");
+
     const stats = [
         {
             value: "350+",
-            label: "Verified Cleaners",
-            description: "Professional cleaners verified with ID and business documents, ready to accept jobs.",
+            label: t("stats.verified.label"),
+            description: t("stats.verified.description"),
             color: "text-[#22C55E]"
         },
         {
             value: "1,200+",
-            label: "Cleaning Jobs Completed",
-            description: "Successfully completed cleaning missions with photo validation and host approval.",
+            label: t("stats.completed.label"),
+            description: t("stats.completed.description"),
             color: "text-[#EF4444]"
         },
         {
             value: "4.8 / 5",
-            label: "Average Cleaner Rating",
-            description: "High satisfaction score based on real reviews from verified hosts.",
+            label: t("stats.rating.label"),
+            description: t("stats.rating.description"),
             color: "text-[#3B82F6]"
         },
         {
             value: "100%",
-            label: "Secure Payments",
-            description: "All payments are processed securely and released only after job validation.",
+            label: t("stats.payments.label"),
+            description: t("stats.payments.description"),
             color: "text-[#A855F7]"
         }
     ];
@@ -45,13 +48,13 @@ export default function CleanersInNumbers() {
                         transition={{ duration: 0.5 }}
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                            Our Cleaners In <span className="text-[#2DBEFF]">Numbers</span>
+                            {t('title')} <span className="text-[#2DBEFF]">{t('title_highlight')}</span>
                         </h2>
                         <p className="text-gray-600 text-lg">
-                            We take pride in our network of professional cleaners who deliver exceptional service to our valued customers. Our commitment to quality and reliability is reflected in our growing community and the trust we've built.
+                            {t('description')}
                         </p>
                         <Button className="bg-[#2DBEFF] hover:bg-[#1A8CD8] text-white">
-                            Learn More
+                            {t('cta')}
                             <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                     </motion.div>

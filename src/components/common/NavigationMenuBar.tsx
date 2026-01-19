@@ -57,16 +57,16 @@ export const NavigationMenuBar = () => {
 
     const ORGANIZER_MENU_ITEMS: MenuItem[] = [
         { label: t("home"), href: '/' },
-        { label: 'Jobs', href: '/jobs' },
-        { label: 'Calendar', href: '/cleaner-calender' },
-        { label: 'Contact Us', href: '/contact-us' },
+        { label: t("jobs"), href: '/jobs' },
+        { label: t("calendar"), href: '/cleaner-calender' },
+        { label: t("contactUs"), href: '/contact-us' },
     ];
 
     const HOST_USER_MENU_ITEMS: MenuItem[] = [
         { label: t("home"), href: '/' },
-        { label: 'Properties', href: '/properties' },
-        { label: 'Calendar', href: '/calendar' },
-        { label: 'Contact Us', href: '/contact-us' },
+        { label: t("properties"), href: '/properties' },
+        { label: t("calendar"), href: '/calendar' },
+        { label: t("contactUs"), href: '/contact-us' },
     ];
 
 

@@ -10,6 +10,7 @@ import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { Card } from 'antd';
 import { Typography } from '../typography/typoGraphy';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 const testimonials = [
   {
     id: 1,
@@ -68,17 +69,18 @@ const testimonials = [
 ];
 
 function ClientWord() {
+  const t = useTranslations("clinet-word")
   return (
     <div className="max-w-[95%] md:max-w-[65%] px-2 mx-auto relative">
       <div className="flex flex-col items-center text-center">
         <Typography variant="overline" className="text-[#0072C3] font-bold">
-          Find Cleaning Jobs Near You
+          {t("subtitle")}
         </Typography>
         <Typography variant="h2" className="text-[#0072C3] font-bold">
-          Meet Our Cleaner
+          {t("title")}
         </Typography>
         <Typography variant="body" className="text-lg mb-8 text-center max-w-2xl mx-auto">
-          Find nearby cleaning jobs, manage your availability, and receive secure payments after completing tasks.
+          {t("description")}
         </Typography>
       </div>
       <div className="gradient-ellipse"></div>
@@ -113,10 +115,10 @@ function ClientWord() {
         {testimonials.map((testimonial) => (
           <SwiperSlide key={testimonial.id}>
             <Card
-            style={{
-              backgroundImage: 'linear-gradient(180deg, #dbeafe 0%, #0072C3 100%)'
-            }}
-            className="bg-linear-to-r rounded-md  from-blue-50 to-[#0072C3] w-full p-4 backdrop-blur-2xl bg-white transition-shadow duration-300">
+              style={{
+                backgroundImage: 'linear-gradient(180deg, #dbeafe 0%, #0072C3 100%)'
+              }}
+              className="bg-linear-to-r rounded-md  from-blue-50 to-[#0072C3] w-full p-4 backdrop-blur-2xl bg-white transition-shadow duration-300">
               <div className="flex flex-col gap-2 items-center text-center">
                 <GlowingEffect
                   spread={40}

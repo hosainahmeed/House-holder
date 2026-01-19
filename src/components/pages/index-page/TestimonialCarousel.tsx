@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { IMAGE_CONSTANTS } from '@/assets/images/image.index';
 import TypographyDescription from '@/components/common/Typography';
 import { Typography } from '@/components/typography/typoGraphy';
+import { useTranslations } from 'next-intl';
 
 interface Testimonial {
     id: number;
@@ -83,12 +84,13 @@ const TestimonialCarousel: React.FC = memo(() => {
     }, [isAnimating]);
 
     const currentTestimonial = TESTIMONIALS[currentIndex];
+    const t = useTranslations('user-says')
 
     return (
         <>
             <div className="flex flex-col items-center justify-center gap-4">
-                <TypographyDescription text="What Our Users Say" target="Users Say" className="text-black max-w-5xl text-center font-semibold text-2xl min-[480px]:text-3xl sm:text-4xl md:text-5xl" />
-                <Typography variant="body" className="text-gray-500 md:text-base max-w-4xl text-center">Discover how hosts and professional cleaners use our platform to simplify scheduling, ensure reliable service, and enjoy secure, stress-free payments.</Typography>
+                <TypographyDescription text={t("title")} target={t("target")} className="text-black max-w-5xl text-center font-semibold text-2xl min-[480px]:text-3xl sm:text-4xl md:text-5xl" />
+                <Typography variant="body" className="text-gray-500 md:text-base max-w-4xl text-center">{t("description")}</Typography>
             </div>
             <div style={{
                 backgroundImage: `url(${IMAGE_CONSTANTS.testimonialsImage.src})`,

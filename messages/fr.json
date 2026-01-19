@@ -14,7 +14,9 @@
     "search": "Rechercher",
     "loading": "Chargement...",
     "error": "Une erreur s'est produite",
-    "success": "Succès!"
+    "success": "Succès!",
+    "explore": "Explorer",
+    "join-as-host": "Rejoignez-nous en tant que nettoyeur"
   },
   "HomePage": {
     "title": "Bienvenue sur AirHousehold",
@@ -85,7 +87,7 @@
   },
   "Footer": {
     "contactUs": "Contactez-nous",
-    "description":"Donner aux parents, aux tuteurs et aux élèves les moyens d'agir grâce à une plateforme d'apprentissage intelligente et transparente",
+    "description": "Donner aux parents, aux tuteurs et aux élèves les moyens d'agir grâce à une plateforme d'apprentissage intelligente et transparente",
     "address": "111 Mohakhali, Dhaka, DH 1515, Bangladesh.",
     "email": "bdcalling@gmail.com",
     "phone": "+88015-88888-9999",
@@ -99,5 +101,83 @@
     "faq": "FAQ",
     "copyright": "© {year} Votre Nom d'Entreprise. Tous droits réservés.",
     "support": "soutien"
+  },
+  "banner": {
+    "title": "TRANSFORMEZ VOS COMPÉTENCES EN NETTOYAGE EN UN REVENU FIABLE",
+    "description": "Rejoignez une plateforme de confiance qui met en relation des professionnels du nettoyage avec des hôtes vérifiés. Choisissez des missions près de chez vous, gérez votre emploi du temps et recevez des paiements sécurisés après chaque mission accomplie.",
+    "subtitle": "Trouvez des missions de nettoyage près de chez vous. Recevez des paiements sécurisés."
+  },
+  "clinet-word": {
+    "subtitle": "Trouvez des missions de nettoyage près de chez vous",
+    "title": "Rencontrez nos agents de nettoyage",
+    "description": "Trouvez des missions de nettoyage à proximité, gérez vos disponibilités et recevez des paiements sécurisés après avoir accompli les tâches."
+  },
+  "why-choose": {
+    "title": "Pourquoi choisir notre plateforme en tant qu’agent de nettoyage ?",
+    "target": "Plateforme pour les agents de nettoyage ?",
+    "description": "De la planification des missions à la communication avec les clients, notre plateforme donne aux agents de nettoyage tous les outils nécessaires pour tout gérer facilement — depuis un tableau de bord simple et intuitif. Restez organisé, restez connecté et concentrez-vous sur l’essentiel : votre travail."
+  },
+  "features": {
+    "nearby_jobs": {
+      "title": "Trouvez des missions de nettoyage à proximité",
+      "description": "Parcourez les missions de nettoyage disponibles près de chez vous et choisissez celles qui correspondent à votre emploi du temps et à vos préférences."
+    },
+    "weekly_schedule": {
+      "title": "Planning hebdomadaire professionnel",
+      "description": "Gérez vos disponibilités grâce à un calendrier hebdomadaire clair, conçu spécialement pour les agents de nettoyage — sans chevauchement, sans confusion."
+    },
+    "secure_payments": {
+      "title": "Paiements sécurisés et automatiques",
+      "description": "Recevez vos paiements en toute sécurité via notre système de paiement sécurisé une fois le travail terminé et approuvé — sans espèces, sans retard."
+    },
+    "job_validation": {
+      "title": "Validation de mission facile",
+      "description": "Téléchargez des photos et complétez une simple liste de contrôle pour valider votre travail et débloquer rapidement votre paiement."
+    },
+    "reputation": {
+      "title": "Développez votre réputation",
+      "description": "Recevez des notes et des avis des hôtes après chaque mission terminée et développez votre profil à chaque réussite."
+    },
+    "communication": {
+      "title": "Communication directe avec les hôtes",
+      "description": "Discutez en toute sécurité avec les hôtes pour les missions confirmées afin de clarifier les détails, partager des mises à jour et éviter les malentendus."
+    }
+  },
+  "join-section": {
+    "title": "Commencez à gagner de l'argent avec des emplois de nettoyage près de chez vous",
+    "subtitle": "Rejoignez les centaines de professionnels du nettoyage qui font confiance à notre plateforme pour trouver des missions de nettoyage fiables, gérer leur emploi du temps et recevoir des paiements sécurisés, le tout dans un système simple et organisé."
+  },
+  "cleaners-in-numbers": {
+    "title": "Nos agents en",
+    "title_highlight": "chiffres",
+    "description": "Nous sommes fiers de notre réseau d'agents d'entretien professionnels qui offrent un service exceptionnel. Notre engagement envers la qualité et la fiabilité se reflète dans notre communauté grandissante.",
+    "cta": "En savoir plus",
+    "stats": {
+      "verified": {
+        "label": "Agents vérifiés",
+        "description": "Agents professionnels vérifiés avec pièce d'identité et documents officiels."
+      },
+      "completed": {
+        "label": "Missions terminées",
+        "description": "Missions de nettoyage réussies avec validation photo et approbation de l'hôte."
+      },
+      "rating": {
+        "label": "Note moyenne",
+        "description": "Score de satisfaction élevé basé sur les avis réels des hôtes vérifiés."
+      },
+      "payments": {
+        "label": "Paiements sécurisés",
+        "description": "Tous les paiements sont sécurisés et débloqués après validation du travail."
+      }
+    }
+  },
+  "app_download": {
+    "title": "Téléchargez notre application sur le Play Store et profitez d’une manière plus rapide et plus intelligente de gérer les services de nettoyage.",
+    "subtitle": "Gérez vos services de nettoyage à tout moment et en tout lieu. Téléchargez notre application depuis le Play Store pour réserver des services, suivre vos demandes, communiquer avec les agents de nettoyage et recevoir des mises à jour en temps réel — directement depuis votre appareil mobile."
+  },
+  "user-says": {
+    "title": "Ce que disent nos utilisateurs",
+    "target": "Utilisateurs",
+    "description": "Découvrez comment les hôtes et les nettoyeurs professionnels utilisent notre plateforme pour simplifier la planification, garantir un service fiable et profiter de paiements sécurisés et sans stress."
   }
 }

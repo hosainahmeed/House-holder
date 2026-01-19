@@ -14,7 +14,9 @@
     "search": "Search",
     "loading": "Loading...",
     "error": "An error occurred",
-    "success": "Success!"
+    "success": "Success!",
+    "explore": "Explore",
+    "join-as-host": "Join as Host"
   },
   "HomePage": {
     "title": "Welcome to AirHousehold",
@@ -99,5 +101,83 @@
     "faq": "FAQ",
     "copyright": "© {year} Your Company Name. All rights reserved.",
     "support": "Support"
+  },
+  "banner": {
+    "title": "TURN YOUR CLEANING SKILLS INTO RELIABLE INCOME",
+    "description": "Join a trusted platform that connects professional cleaners with verified hosts. Choose jobs near you, manage your schedule, and receive secure payments after every completed mission.",
+    "subtitle": "Find Cleaning Jobs Near You. Get Paid Securely."
+  },
+  "clinet-word": {
+    "subtitle": "Find Cleaning Jobs Near You",
+    "title": "Meet Our Cleaner",
+    "description": "Find nearby cleaning jobs, manage your availability, and receive secure payments after completing tasks."
+  },
+  "why-choose": {
+    "title": "Why Choose Our Platform as a Cleaner?",
+    "target": "Platform as a Cleaner?",
+    "description": "From scheduling jobs to communicating with clients, our platform gives cleaning staff all the tools they need to manage everything easily—from a simple and intuitive dashboard. Stay organized, stay connected, and focus on what matters most: your work."
+  },
+  "join-section": {
+    "title": "Start Earning with Cleaning Jobs Near You",
+    "subtitle": "Join hundreds of professional cleaners who trust our platform to find reliable cleaning jobs, manage their schedule, and receive secure payments — all in one simple and organized system."
+  },
+  "features": {
+    "nearby_jobs": {
+      "title": "Find Nearby Cleaning Jobs",
+      "description": "Browse available cleaning missions near your location and choose the ones that fit your schedule and preferences."
+    },
+    "weekly_schedule": {
+      "title": "Professional Weekly Schedule",
+      "description": "Manage your availability with a clear weekly calendar designed specifically for cleaners — no overlap, no confusion."
+    },
+    "secure_payments": {
+      "title": "Secure & Automatic Payments",
+      "description": "Get paid safely through our secure payment system once your job is completed and approved — no cash, no delays."
+    },
+    "job_validation": {
+      "title": "Easy Job Validation",
+      "description": "Upload photos and complete a simple checklist to validate your work and release your payment quickly."
+    },
+    "reputation": {
+      "title": "Build Your Reputation",
+      "description": "Receive ratings and reviews from hosts after each completed job and grow your profile with every successful mission."
+    },
+    "communication": {
+      "title": "Direct Host Communication",
+      "description": "Chat securely with hosts for confirmed jobs to clarify details, share updates, and avoid misunderstandings."
+    }
+  },
+  "cleaners-in-numbers": {
+    "title": "Our Cleaners In",
+    "title_highlight": "Numbers",
+    "description": "We take pride in our network of professional cleaners who deliver exceptional service to our valued customers. Our commitment to quality and reliability is reflected in our growing community and the trust we've built.",
+    "cta": "Learn More",
+    "stats": {
+      "verified": {
+        "label": "Verified Cleaners",
+        "description": "Professional cleaners verified with ID and business documents, ready to accept jobs."
+      },
+      "completed": {
+        "label": "Cleaning Jobs Completed",
+        "description": "Successfully completed cleaning missions with photo validation and host approval."
+      },
+      "rating": {
+        "label": "Average Cleaner Rating",
+        "description": "High satisfaction score based on real reviews from verified hosts."
+      },
+      "payments": {
+        "label": "Secure Payments",
+        "description": "All payments are processed securely and released only after job validation."
+      }
+    }
+  },
+  "app_download": {
+    "title": "Download our app from the Play Store and enjoy a faster, smarter way to manage cleaning services.",
+    "subtitle": "Manage your cleanings anytime, anywhere. Download our app from the Play Store to book services, track requests, communicate with cleaners, and receive real-time updates — all from your mobile device."
+  },
+  "user-says": {
+    "title": "What Our Users Say",
+    "target": "Users Say",
+    "description": "Discover how hosts and professional cleaners use our platform to simplify scheduling, ensure reliable service, and enjoy secure, stress-free payments."
   }
 }

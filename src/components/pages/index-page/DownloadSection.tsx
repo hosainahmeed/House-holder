@@ -4,8 +4,10 @@ import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
 import { IMAGE_CONSTANTS } from '@/assets/images/image.index';
+import { useTranslations } from 'next-intl';
 
 function DownloadSection() {
+  const t = useTranslations("app_download");
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -84,14 +86,14 @@ function DownloadSection() {
               className="font-bold mb-4 text-black text-2xl md:text-4xl leading-none tracking-normal"
               variants={itemVariants}
             >
-              Download our app from the Play Store and enjoy a faster,<span className="text-[#2DBEFF]"> smarter way to manage cleaning services.</span>
+              {t('title')}
             </motion.h1>
 
             <motion.p
               className="text-[#64748B]  text-sm md:text-lg lg:text-xl mb-6 lg:mb-8 leading-relaxed"
               variants={itemVariants}
             >
-              Manage your cleanings anytime, anywhere. Download our app from the Play Store to book services, track requests, communicate with cleaners, and receive real-time updates — all from your mobile device.
+              {t('subtitle')}
             </motion.p>
 
             <motion.div
