@@ -73,10 +73,10 @@ function ClientWord() {
   return (
     <div className="max-w-[95%] md:max-w-[65%] px-2 mx-auto relative">
       <div className="flex flex-col items-center text-center">
-        <Typography variant="overline" className="text-[#0072C3] font-bold">
+        <Typography variant="overline" className="text-[#0072C3] text-center font-bold">
           {t("subtitle")}
         </Typography>
-        <Typography variant="h2" className="text-[#0072C3] font-bold">
+        <Typography variant="h2" className="text-[#0072C3] text-center font-bold">
           {t("title")}
         </Typography>
         <Typography variant="body" className="text-lg mb-8 text-center max-w-2xl mx-auto">

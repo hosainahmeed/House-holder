@@ -98,7 +98,7 @@ const RateAdjuster: React.FC<{
 
 
 export default function CleaningServiceBooking() {
-  const { form, rate, sendToFavorites, isSubmitting, handlers } = useFormHandlers()
+  const { form, rate, sendToFavorites, isSubmitting, handlers, selectedOption } = useFormHandlers()
 
   const propertyOptions = useMemo(() => (
     SAMPLE_PROPERTIES.map((property) => ({
@@ -199,9 +199,9 @@ export default function CleaningServiceBooking() {
                     <CleaningOptionCard
                       key={option.value}
                       option={option}
-                      isSelected={form.getFieldValue('bedLinens') === option.value.toString()}
+                      isSelected={selectedOption === option.value}
                       onSelect={(value) => {
-                        form.setFieldValue('bedLinens', value);
+                        handlers.handleCleaningOptionChange(Number(value));
                       }}
                     />
                   ))}

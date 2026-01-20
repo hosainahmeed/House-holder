@@ -27,7 +27,7 @@ export const ProfileDropdown = ({ user, isOpen, profile, onClose, onLogout }: an
                 {
                     label: t("host.my_properties"),
                     icons: <Calendar size={20} />,
-                    onPointerDown: () => handleNavigate('/my-shortlisted-events')
+                    onPointerDown: () => handleNavigate('/my-propertise')
                 },
                 {
                     label: t("host.messages"),
