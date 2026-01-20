@@ -22,10 +22,10 @@ export default function Banner() {
       <main className="container mx-auto flex flex-col gap-4 items-start justify-center h-full">
         <div className="flex gap-2  items-center">
           <CleanIcon width="44" height="44" fill="#111" />
-          <Typography className="text-[#323135] leading-none" variant="subtitle">{t("subtitle")}</Typography>
+          <Typography className="text-[#323135] leading-none" variant="caption">{t("subtitle")}</Typography>
         </div>
-        <Typography variant="h1" className="text-white max-w-3xl font-semibold">{t("title")}</Typography>
-        <Typography variant="subtitle" className="text-[#323135] max-w-3xl font-semibold">{t("description")}</Typography>
+        <Typography variant="h2" className="text-white max-w-3xl font-semibold">{t("title")}</Typography>
+        <Typography variant="body" className="text-[#323135] max-w-3xl font-semibold">{t("description")}</Typography>
         <Button size="large" style={{ border: '1px solid white', backgroundColor: 'transparent', color: 'white' }} variant="outlined">
           {common("explore")}
         </Button>

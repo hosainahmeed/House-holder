@@ -60,7 +60,7 @@ function Page() {
 
     return (
         <div className="container mx-auto">
-            <BackButton title="Language Settings" className="mb-6" />
+            <BackButton title={t("title")} className="mb-6" />
 
             {/* Header */}
             <div className="mb-6">

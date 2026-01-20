@@ -169,6 +169,47 @@
       "description": "Chat securely with hosts for confirmed jobs to clarify details, share updates, and avoid misunderstandings."
     }
   },
+  "DeleteAccount": {
+    "title": "Delete Account",
+    "warningTitle": "Warning: This action is permanent and cannot be undone!",
+    "warningText": "Once you delete your account, all your data will be permanently removed from our servers.",
+    "whatWillBeDeleted": "What will be deleted:",
+    "deletedItems": [
+      "Your profile information and personal data",
+      "All your saved preferences and settings",
+      "Your account history and activity",
+      "Access to all services associated with this account",
+      "Any uploaded files and documents"
+    ],
+    "confirmDeletion": {
+      "title": "Confirm Account Deletion",
+      "description": "To proceed with deleting your account, please enter your current password below.",
+      "passwordLabel": "Current Password",
+      "passwordPlaceholder": "Enter your current password",
+      "confirmationText": "I understand that deleting my account is permanent and all my data will be lost forever",
+      "deleteButton": "Delete Account"
+    },
+    "alternatives": {
+      "title": "Looking for alternatives?",
+      "description": "Before you delete your account, consider these options:",
+      "options": [
+        "Temporarily deactivate your account instead",
+        "Update your privacy settings",
+        "Contact our support team if you're having issues"
+      ]
+    },
+    "confirmationModal": {
+      "title": "Final Confirmation",
+      "message": "Are you absolutely sure you want to delete your account? This action cannot be reversed.",
+      "confirmButton": "Yes, Delete My Account",
+      "cancelButton": "Cancel",
+      "successMessage": "Your account has been successfully deleted"
+    },
+    "sorryToSeeYouGo": "We're sorry to see you go. Please read the information below carefully.",
+    "passwordRequired": "Please enter your password to confirm deletion",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "confirmationRequired": "You must confirm to proceed"
+  },
   "cleaners-in-numbers": {
     "title": "Our Cleaners In",
     "title_highlight": "Numbers",
@@ -217,5 +258,14 @@
       "rating_review": "Ratings & Reviews",
       "my_income": "My Income"
     }
+  },
+  "my-profile-setting":{
+    "profile_and_account_settings": "Profile & Account Settings",
+    "profile_info": "Profile Info",
+    "identity_verification": "Identity Verification",
+    "legal_notices": "Legal Notices",
+    "language": "Language",
+    "change_password": "Change Password",
+    "delete_account": "Delete Account"
   }
 }

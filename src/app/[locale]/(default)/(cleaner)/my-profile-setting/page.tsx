@@ -1,46 +1,48 @@
 import BackButton from '@/components/ui/BackButton'
 import { Delete, Trash2 } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { CgProfile } from 'react-icons/cg'
 import { MdPermIdentity } from 'react-icons/md'
 
 function page() {
+  const t = useTranslations('my-profile-setting')
+
   const data = [
     {
-      title: 'Profile Info',
+      title: t('profile_info'),
       icon: <CgProfile size={20} />,
       path: '/my-profile-setting/info'
     },
     {
-      title: 'Identity Verification',
+      title: t('identity_verification'),
       icon: <MdPermIdentity size={20} />,
       path: '/my-profile-setting/identity-verification'
     },
     {
-      title: 'Legal Notices',
+      title: t('legal_notices'),
       icon: <CgProfile size={20} />,
       path: '/my-profile-setting/legal-notices'
     },
     {
-      title: 'Language ',
+      title: t('language'),
       icon: <CgProfile size={20} />,
       path: '/my-profile-setting/language'
     },
     {
-      title: 'Change Password ',
+      title: t('change_password'),
       icon: <CgProfile size={20} />,
       path: '/my-profile-setting/change-password'
     },
     {
-      title: 'Delete Account',
+      title: t('delete_account'),
       icon: <Trash2 size={20} />,
       path: '/my-profile-setting/delete-account'
     },
-
   ]
   return (
     <div className='container mx-auto'>
-      <BackButton title='Profile & Account Settings' className='text-[#2DBEFF]' />
+      <BackButton title={t('profile_and_account_settings')} className='text-[#2DBEFF]' />
       <div className='grid grid-cols-1 gap-4 mt-4'>
         {data.map((item: any, index: number) => (
           <Card key={index} title={item.title} icon={item.icon} path={item.path} />
