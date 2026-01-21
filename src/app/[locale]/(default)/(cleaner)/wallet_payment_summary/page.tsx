@@ -10,12 +10,57 @@ const onChange = (key: string) => {
   console.log(key);
 };
 
+export interface IWalletPaymentSummaryCardProps {
+  name: string
+  status: 'succeed' | 'pending' | 'refound'
+  img: string
+  price: string
+  transactionId: string
+  date: string
+  apartment: string,
+  rating: number
+}
 
 const WalletPaymentSummary = ({ value }: { value: string }) => {
+  const data: IWalletPaymentSummaryCardProps[] = [
+    {
+      name: 'Hridoy',
+      status: 'succeed',
+      img: 'https://placehold.co/600x400',
+      price: '$720',
+      transactionId: '2125123',
+      date: '21-10 - 2025 7:00 p.m',
+      apartment: 'Private room in San Francisco',
+      rating: 4.9
+    },
+    {
+      name: 'Hridoy',
+      status: 'pending',
+      img: 'https://placehold.co/600x400',
+      price: '$720',
+      transactionId: '2125123',
+      date: '21-10 - 2025 7:00 p.m',
+      apartment: 'Private room in San Francisco',
+      rating: 4.9
+    },
+    {
+      name: 'Hridoy',
+      status: 'refound',
+      img: 'https://placehold.co/600x400',
+      price: '$720',
+      transactionId: '2125123',
+      date: '21-10 - 2025 7:00 p.m',
+      apartment: 'Private room in San Francisco',
+      rating: 4.9
+    },
+
+  ]
   const router = useRouter()
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-      <WalletPaymentSummaryCard value={value} />
+      {data?.filter((item: IWalletPaymentSummaryCardProps) => value === 'all' || item.status === value)?.map((item: IWalletPaymentSummaryCardProps, index: number) => (
+        <WalletPaymentSummaryCard key={index} {...item} />
+      ))}
     </div>
   )
 }

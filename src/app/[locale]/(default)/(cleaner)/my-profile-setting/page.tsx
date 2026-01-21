@@ -1,13 +1,20 @@
+'use client'
+import { profile } from '@/components/common/NavigationMenuBar'
 import BackButton from '@/components/ui/BackButton'
 import { Delete, Trash2 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { CgProfile } from 'react-icons/cg'
 import { MdPermIdentity } from 'react-icons/md'
 
 function page() {
   const t = useTranslations('my-profile-setting')
-
+  const [role, setRole] = useState('')
+  useEffect(() => {
+    const role = profile.role
+    setRole(role)
+  }, [])
   const data = [
     {
       title: t('profile_info'),
@@ -24,6 +31,11 @@ function page() {
       icon: <CgProfile size={20} />,
       path: '/my-profile-setting/legal-notices'
     },
+    ...(role === 'cleaner' ? [{
+      title: t('payment_and_translation'),
+      icon: <CgProfile size={20} />,
+      path: '/wallet_payment_summary'
+    }] : []),
     {
       title: t('language'),
       icon: <CgProfile size={20} />,
@@ -45,7 +57,7 @@ function page() {
       <BackButton title={t('profile_and_account_settings')} className='text-[#2DBEFF]' />
       <div className='grid grid-cols-1 gap-4 mt-4'>
         {data.map((item: any, index: number) => (
-          <Card key={index} title={item.title} icon={item.icon} path={item.path} />
+          <Card key={index} title={item?.title} icon={item?.icon} path={item?.path} />
         ))}
       </div>
     </div>

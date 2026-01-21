@@ -25,6 +25,14 @@ export interface MenuItem {
     icons?: string;
 }
 
+export const profile: any = {
+    name: 'Tanjim',
+    email: 'tanjim@gmail.com',
+    profile_image: 'https://placehold.co/600x400',
+    role: 'cleaner',
+    user: true
+}
+
 
 
 export const NavigationMenuBar = () => {
@@ -35,14 +43,6 @@ export const NavigationMenuBar = () => {
     const pathname = usePathname();
 
     const t = useTranslations('Navigation')
-
-    const profile: any = {
-        name: 'Tanjim',
-        email: 'tanjim@gmail.com',
-        profile_image: 'https://placehold.co/600x400',
-        role: 'cleaner',
-        user: true
-    }
 
     // if (isLoading) {
     //     <div className="h-20 bg-white/80 backdrop-blur-md border-b border-gray-200 supports-backdrop-blur:bg-white/60"></div>
@@ -75,7 +75,7 @@ export const NavigationMenuBar = () => {
     }, [pathname]);
 
     const handleLogout = useCallback(() => {
-       router.push("/login");
+        router.push("/login");
     }, [router]);
 
     const handleToggleDropdown = useCallback(() => {
