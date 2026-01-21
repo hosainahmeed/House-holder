@@ -29,7 +29,7 @@ export const profile: any = {
     name: 'Tanjim',
     email: 'tanjim@gmail.com',
     profile_image: 'https://placehold.co/600x400',
-    role: 'host',
+    role: 'cleaner',
     user: true
 }
 
