@@ -1,15 +1,18 @@
 'use client'
-import { Button, Card } from "antd";
+import { Button } from "antd";
 import Image from "next/image";
 
 import { IMAGE_CONSTANTS } from "@/assets/images/image.index";
 import { Typography } from "@/components/typography/typoGraphy";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowBigLeft } from "lucide-react";
+import { ArrowBigLeft, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 export default function ChooseRolePage() {
     const router = useRouter()
+    const [selectedRole, setSelectedRole] = useState<string | null>(null)
     const chooseRoleDetails = [
         {
             role: "host",
@@ -29,23 +32,63 @@ export default function ChooseRolePage() {
         }
     ]
     return (
-        <main className="absolute max-w-6xl z-10 flex flex-col gap-4 mx-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            
-            <Button icon={<ArrowBigLeft />} shape="default" className="w-fit" type="primary" onClick={()=>router.back()} >Back</Button>
-            {chooseRoleDetails.map((detail, index) => (
-                <Card style={{ backgroundColor: '#EFF6FF' }} key={index}>
-                    <div className="flex flex-col md:flex-row items-center gap-4">
-                        <Card variant="outlined" style={{ backgroundColor: '#fff', padding: '0', margin: '0' ,width: '200px', height: '150px' }}>
-                            <Image className="w-full h-full aspect-square object-cover" src={detail.image} alt={detail.role} width={200} height={150} />
-                        </Card>
-                        <div className="flex flex-col items-start">
-                            <Typography variant="h1">{detail.title}</Typography>
-                            <Typography variant="overline" className="my-3 font-light text-sm">{detail.description}</Typography>
-                            <Link href={detail.href}><Button size="large" type="primary">{detail.buttonText}</Button></Link>
+        <main className="min-h-screen w-full flex items-center justify-center p-4 sm:p-6 lg:p-8">
+            <div className="w-full max-w-6xl flex flex-col gap-4 sm:gap-6">
+                <button
+                    onClick={() => router.back()}
+                    className="p-2 rounded-full bg-[#EFF6FF] w-fit shadow cursor-pointer border border-[#EFF6FF]"
+                >
+                    <ArrowBigLeft />
+                </button>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+                    {chooseRoleDetails.map((detail, index) => (
+                        <div
+                            onClick={() => setSelectedRole(detail.role)}
+                            className={cn(
+                                "p-4 sm:p-5 lg:p-6 bg-[#EFF6FF] border border-[#EFF6FF] rounded-lg cursor-pointer transition-all hover:shadow-lg",
+                                selectedRole === detail.role && "border-[#2563EB]"
+                            )}
+                            key={index}
+                        >
+                            <div className="flex flex-col items-center gap-3 sm:gap-4">
+                                <div className="w-full bg-white p-0 m-0 rounded-lg overflow-hidden" style={{ height: 'auto', maxHeight: '300px' }}>
+                                    <Image
+                                        className="w-full border border-[#2f7de2a9] rounded-lg h-auto max-h-[200px] sm:max-h-[250px] md:max-h-[300px] object-contain"
+                                        src={detail.image}
+                                        alt={detail.role}
+                                        width={300}
+                                        height={300}
+                                    />
+                                </div>
+                                <div className="flex flex-col items-start w-full">
+                                    <Typography variant="h1" className="text-lg sm:text-xl lg:text-2xl">
+                                        {detail.title}
+                                    </Typography>
+                                    <Typography
+                                        variant="overline"
+                                        className="my-2 sm:my-3 font-light text-xs sm:text-sm leading-relaxed"
+                                    >
+                                        {detail.description}
+                                    </Typography>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </Card>
-            ))}
+                    ))}
+                </div>
+
+                <button
+                    disabled={!selectedRole}
+                    className={cn(
+                        "w-full sm:w-fit sm:self-end bg-[#2563EB] text-white cursor-pointer rounded px-6 py-2 sm:py-2.5 text-sm sm:text-base transition-all",
+                        !selectedRole && "opacity-50 cursor-not-allowed"
+                    )}
+                    type="button"
+                    onClick={() => router.push(selectedRole === "host" ? "/register?role=host" : "/register?role=cleaner")}
+                >
+                    Next
+                </button>
+            </div>
         </main>
     )
 }

@@ -99,7 +99,7 @@ export default function RegisterPage() {
 
   return (
     <main className="px-4 absolute md:pt-0 pt-28 flex flex-col gap-4 max-w-[1040px] w-full mx-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-      <Content className="grid lg:grid-cols-2 bg-white md:rounded-2xl w-full md:shadow overflow-hidden">
+      <div className="relative w-full max-w-6xl mx-auto grid lg:grid-cols-2 bg-white md:rounded-2xl md:shadow overflow-hidden">
         <div className="relative hidden lg:flex flex-col items-center justify-center bg-[#DBEBF7] text-white">
           <div className="absolute top-4 left-4 hidden lg:block">
             <Button
@@ -241,7 +241,7 @@ export default function RegisterPage() {
             </Space>
           </div>
         </div>
-      </Content>
+      </div>
     </main>
   );
 }

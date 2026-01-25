@@ -13,12 +13,13 @@ export const metadata: Metadata = {
 };
 
 import ClientWord from '@/components/testomonials/ClientWord';
+import Supplement from '@/components/pages/index-page/Supplement'
 
 function page() {
   return (
     <div className="flex flex-col gap-24">
       <Banner />
-      <ClientWord />
+      <Supplement />
       <WhyChoose />
       <JoinSection />
       <CleanersInNumbers />

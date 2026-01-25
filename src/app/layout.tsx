@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 export const metadata: Metadata = {
   title: {
@@ -16,9 +17,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log(process.env.NEXT_PUBLIC_GOOGLE_API);
   return (
     <html>
-      <body>{children}</body>
+      <body>
+        <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_API || ""}>
+          {children}
+        </GoogleOAuthProvider>
+      </body>
     </html>
   );
 }
