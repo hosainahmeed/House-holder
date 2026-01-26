@@ -19,6 +19,11 @@ import apartment from "./apartment.png"
 import mansion from "./mansion-.png"
 import vacuum from "./vacuum.png"
 import supplies from "./supplies.png"
+import elevator from "./elevator.png"
+import noElevator from "./no-elevator.png"
+import bed from "./bed.png"
+import kitchen from "./kitchen.png"
+import sink from "./sink.png"
 export const ICONS = {
    setting,
    message,
@@ -39,5 +44,10 @@ export const ICONS = {
    apartment,
    mansion,
    vacuum,
-   supplies
+   supplies,
+   elevator,
+   noElevator,
+   bed,
+   kitchen,
+   sink
 } as const; 

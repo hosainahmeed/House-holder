@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import ReduxWrapper from "@/rtk/query/ReduxWrapper";
 
 export const metadata: Metadata = {
   title: {
@@ -21,9 +22,11 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_API || ""}>
-          {children}
-        </GoogleOAuthProvider>
+        <ReduxWrapper>
+          <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_API || ""}>
+            {children}
+          </GoogleOAuthProvider>
+        </ReduxWrapper>
       </body>
     </html>
   );
