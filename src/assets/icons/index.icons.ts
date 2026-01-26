@@ -15,7 +15,11 @@ import home from "./home.svg"
 import vaccume from "./vaccume.svg"
 import key from "./key.svg"
 import valid from "./valid.svg"
-export const ICONS: any = {
+import apartment from "./apartment.png"
+import mansion from "./mansion-.png"
+import vacuum from "./vacuum.png"
+import supplies from "./supplies.png"
+export const ICONS = {
    setting,
    message,
    calender,
@@ -31,5 +35,9 @@ export const ICONS: any = {
    home,
    key,
    vaccume,
-   valid
-};
+   valid,
+   apartment,
+   mansion,
+   vacuum,
+   supplies
+} as const; 

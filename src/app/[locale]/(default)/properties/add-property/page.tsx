@@ -1,633 +1,346 @@
 'use client'
-import React, { useState, useCallback } from 'react';
-import { Upload, Input, Select, Button, InputNumber, Checkbox, Radio, message } from 'antd';
-import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
-import { Building2, Home, Key, Lock } from 'lucide-react';
-import type { RadioChangeEvent } from 'antd';
 
-const { TextArea } = Input;
+import React, { useState } from 'react'
+import { Button, Input, Select, Upload, message, Switch, InputNumber, Tooltip } from 'antd'
+import { UploadOutlined, ArrowLeftOutlined, ArrowRightOutlined, CheckOutlined } from '@ant-design/icons'
+import type { UploadFile } from 'antd/es/upload/interface'
+import Image from 'next/image'
+import { ICONS } from '@/assets/icons/index.icons'
+import { cn } from '@/lib/utils'
+import PlacePicker from '@/components/PlacePicker'
 
-// Type definitions
-type PropertyType = 'apartment' | 'home';
-type ElevatorType = 'yes' | 'no';
-type KeyHandoverType = 'in-person' | 'lockbox';
+const { TextArea } = Input
+const { Option } = Select
 
-interface Task {
-  id: number;
-  text: string;
-  checked: boolean;
+interface PropertyData {
+  propertyTitle: string
+  propertyImage: UploadFile[]
+  propertyType: string
+  floor: number
+  apartmentNumber: string
+  location: string
+  propertySize: number
+  bedroomQuantity: number
+  bathroomQuantity: number
+  kitchenQuantity: number
+  elevator: boolean
+  inPersonKeyHandover: boolean
+  keyboxLocation: string
+  lockboxCode: string
+  description: string
 }
 
-interface FormData {
-  title: string;
-  images: any[];
-  propertyType: PropertyType;
-  floor: string;
-  apartmentNumber: string;
-  elevator: ElevatorType;
-  propertySize: string;
-  location: string;
-  bedroom: number;
-  bathroom: number;
-  kitchen: number;
-  keyHandoverType: KeyHandoverType;
-  keyHandoverDetails: string;
-  lockboxCode: string;
-  keyboxLocation: string;
-  vacuumProvided: boolean;
-  suppliesProvided: boolean;
-  description: string;
-  generalTasks: Task[];
-  bedroomTasks: Task[];
-  bathroomTasks: Task[];
-  kitchenTasks: Task[];
-}
-
-interface CustomTasks {
-  general: string;
-  bedroom: string;
-  bathroom: string;
-  kitchen: string;
-}
-
-// Separate TaskSection component with proper memoization
-interface TaskSectionProps {
-  title: string;
-  category: keyof CustomTasks;
-  tasks: Task[];
-  customTaskValue: string;
-  onAddTask: (category: keyof CustomTasks) => void;
-  onDeleteTask: (category: keyof CustomTasks, taskId: number) => void;
-  onToggleTask: (category: keyof CustomTasks, taskId: number) => void;
-  onCustomTaskChange: (category: keyof CustomTasks, value: string) => void;
-}
-
-const TaskSection = React.memo(({
-  title,
-  category,
-  tasks,
-  customTaskValue,
-  onAddTask,
-  onDeleteTask,
-  onToggleTask,
-  onCustomTaskChange
-}: TaskSectionProps) => {
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      onAddTask(category);
-    }
-  };
-
-  return (
-    <div className="mb-6 border border-gray-200 p-4">
-      <h3 className="font-medium text-gray-800 mb-3">{title}</h3>
-      
-      <div className="space-y-2 mb-3">
-        {tasks.map((task) => (
-          <div key={task.id} className="flex items-center justify-between group">
-            <Checkbox
-              checked={task.checked}
-              onChange={() => onToggleTask(category, task.id)}
-              className="flex-1"
-            >
-              <span className={task.checked ? 'text-gray-400 line-through' : 'text-gray-700'}>
-                {task.text}
-              </span>
-            </Checkbox>
-            <Button
-              type="text"
-              danger
-              size="small"
-              icon={<DeleteOutlined />}
-              onClick={() => onDeleteTask(category, task.id)}
-              className="opacity-0 group-hover:opacity-100 transition-opacity"
-            />
-          </div>
-        ))}
-      </div>
-
-      <div className="flex gap-2">
-        <Input
-          placeholder="Text here"
-          value={customTaskValue}
-          onChange={(e) => onCustomTaskChange(category, e.target.value)}
-          onPressEnter={handleKeyPress}
-          allowClear
-        />
-        <Button
-          type="primary"
-          icon={<PlusOutlined />}
-          onClick={() => onAddTask(category)}
-        >
-          Add
-        </Button>
-      </div>
-    </div>
-  );
-});
-
-TaskSection.displayName = 'TaskSection';
-
-const PropertyForm: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    title: 'Le Central',
-    images: [],
+export default function AddPropertyPage() {
+  const [currentStep, setCurrentStep] = useState(0)
+  const [formData, setFormData] = useState<PropertyData>({
+    propertyTitle: '',
+    propertyImage: [],
     propertyType: 'apartment',
-    floor: '3rd',
-    apartmentNumber: '302',
-    elevator: 'yes',
-    propertySize: '50',
-    location: 'France',
-    bedroom: 1,
-    bathroom: 1,
-    kitchen: 2,
-    keyHandoverType: 'in-person',
-    keyHandoverDetails: '',
-    lockboxCode: '',
+    floor: 1,
+    apartmentNumber: '',
+    location: '',
+    propertySize: 0,
+    bedroomQuantity: 0,
+    bathroomQuantity: 0,
+    kitchenQuantity: 0,
+    elevator: false,
+    inPersonKeyHandover: false,
     keyboxLocation: '',
-    vacuumProvided: false,
-    suppliesProvided: false,
-    description: 'Mezzazine',
-    generalTasks: [
-      { id: 1, text: 'Take out the trash', checked: false },
-      { id: 2, text: 'Air out the accommodation', checked: false },
-      { id: 3, text: 'Check for odors (fresh accommodation)', checked: false }
-    ],
-    bedroomTasks: [
-      { id: 1, text: 'Take out the trash', checked: false },
-      { id: 2, text: 'Air out the accommodation', checked: false },
-      { id: 3, text: 'Check for odors (fresh accommodation)', checked: false }
-    ],
-    bathroomTasks: [
-      { id: 1, text: 'Take out the trash', checked: false },
-      { id: 2, text: 'Air out the accommodation', checked: false },
-      { id: 3, text: 'Check for odors (fresh accommodation)', checked: false }
-    ],
-    kitchenTasks: [
-      { id: 1, text: 'Take out the trash', checked: false },
-      { id: 2, text: 'Air out the accommodation', checked: false },
-      { id: 3, text: 'Check for odors (fresh accommodation)', checked: false }
-    ]
-  });
+    lockboxCode: '',
+    description: ''
+  })
 
-  const [customTasks, setCustomTasks] = useState<CustomTasks>({
-    general: '',
-    bedroom: '',
-    bathroom: '',
-    kitchen: ''
-  });
+  const steps = [
+    'Property Information',
+    'Location & Size',
+    'Room Details',
+    'Elevator & Handover',
+    'Property Description'
+  ]
 
-  const handleInputChange = <K extends keyof FormData>(field: K, value: FormData[K]) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
+  const updateFormData = (field: keyof PropertyData, value: any) => {
+    setFormData(prev => ({ ...prev, [field]: value }))
+  }
 
-  const handleImageUpload = (info: any) => {
-    if (info.file.status === 'done') {
-      message.success(`${info.file.name} uploaded successfully`);
+  const nextStep = () => {
+    if (currentStep < steps.length - 1) {
+      setCurrentStep(currentStep + 1)
     }
-  };
+  }
 
-  // Use useCallback to prevent recreation of these functions on every render
-  const addCustomTask = useCallback((category: keyof CustomTasks) => {
-    const taskText = customTasks[category].trim();
-    if (!taskText) {
-      message.warning('Please enter a task');
-      return;
+  const prevStep = () => {
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1)
     }
-
-    const taskField = `${category}Tasks` as keyof FormData;
-    const newTask: Task = {
-      id: Date.now(),
-      text: taskText,
-      checked: false
-    };
-
-    setFormData(prev => ({
-      ...prev,
-      [taskField]: [...(prev[taskField] as Task[]), newTask]
-    }));
-
-    setCustomTasks(prev => ({ ...prev, [category]: '' }));
-    message.success('Task added successfully');
-  }, [customTasks]);
-
-  const deleteTask = useCallback((category: keyof CustomTasks, taskId: number) => {
-    const taskField = `${category}Tasks` as keyof FormData;
-    setFormData(prev => ({
-      ...prev,
-      [taskField]: (prev[taskField] as Task[]).filter(task => task.id !== taskId)
-    }));
-    message.success('Task deleted');
-  }, []);
-
-  const toggleTask = useCallback((category: keyof CustomTasks, taskId: number) => {
-    const taskField = `${category}Tasks` as keyof FormData;
-    setFormData(prev => ({
-      ...prev,
-      [taskField]: (prev[taskField] as Task[]).map(task =>
-        task.id === taskId ? { ...task, checked: !task.checked } : task
-      )
-    }));
-  }, []);
-
-  const handleCustomTaskChange = useCallback((category: keyof CustomTasks, value: string) => {
-    setCustomTasks(prev => ({ ...prev, [category]: value }));
-  }, []);
+  }
 
   const handleSubmit = () => {
-    console.log('Form Data:', formData);
-    message.success('Property created successfully!');
-  };
+    console.log('Form submitted:', formData)
+    message.success('Property added successfully!')
+  }
+
+  const renderStepContent = () => {
+    switch (currentStep) {
+      case 0:
+        return (
+          <div className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium mb-2">Property Image</label>
+              <Upload
+                listType="picture-card"
+                fileList={formData.propertyImage}
+                beforeUpload={() => false}
+                onChange={({ fileList }) => updateFormData('propertyImage', fileList)}
+              >
+                <div>
+                  <UploadOutlined />
+                  <div style={{ marginTop: 8 }}>Upload</div>
+                </div>
+              </Upload>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">Property Type</label>
+              <div className="w-fit grid grid-cols-2 gap-2">
+                <Tooltip placement='bottomLeft' title="Apartment">
+                  <div
+                    onClick={() => updateFormData('propertyType', 'apartment')}
+                    className={cn("p-2 w-24 h-24 cursor-pointer hover:bg-gray-100 border rounded border-gray-300",
+                      formData.propertyType === 'apartment' && 'border-blue-500'
+                    )}>
+                    <Image src={ICONS.apartment} className='w-full h-full' alt="Apartment" width={50} height={50} />
+                  </div>
+                </Tooltip>
+                <Tooltip placement='bottomLeft' title="Home">
+                  <div
+                    onClick={() => updateFormData('propertyType', 'home')}
+                    className={cn("p-2 w-24 h-24 cursor-pointer hover:bg-gray-100 border rounded border-gray-300",
+                      formData.propertyType === 'home' && 'border-blue-500'
+                    )}>
+                    <Image src={ICONS.mansion} className='w-full h-full' alt="Apartment" width={50} height={50} />
+                  </div>
+                </Tooltip>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">Property Title</label>
+              <Input
+                size='large' value={formData.propertyTitle}
+                onChange={(e) => updateFormData('propertyTitle', e.target.value)}
+                placeholder="Enter property title"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">Floor</label>
+              <Select
+                size='large'
+                value={formData.floor}
+                onChange={(value) => updateFormData('floor', value)}
+                className="w-full"
+              >
+                {Array.from({ length: 50 }).map((_, floor) => (
+                  <Option key={floor} value={floor}>{floor}</Option>
+                ))}
+              </Select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">Apartment Number</label>
+              <Input
+                size='large' value={formData.apartmentNumber}
+                onChange={(e) => updateFormData('apartmentNumber', e.target.value)}
+                placeholder="Enter apartment number"
+              />
+            </div>
+          </div>
+        )
+
+      case 1:
+        return (
+          <div className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium mb-2">Location</label>
+              <Input
+                size='large' value={formData.location}
+                onChange={(e) => updateFormData('location', e.target.value)}
+                placeholder="Enter property location"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-2">Providable</label>
+              <div className="w-fit grid grid-cols-2 gap-2">
+                <Tooltip placement='bottomLeft' title="Vacuum Provided">
+                  <div
+                    onClick={() => updateFormData('propertyType', 'apartment')}
+                    className={cn("p-2 w-34 h-34 cursor-pointer hover:bg-gray-100 border rounded border-gray-300",
+                      formData.propertyType === 'apartment' && 'border-blue-500'
+                    )}>
+                    <Image src={ICONS.supplies} className='w-full h-full' alt="Apartment" width={50} height={50} />
+                  </div>
+                </Tooltip>
+                <Tooltip placement='bottomLeft' title="Supplies Provided">
+                  <div
+                    onClick={() => updateFormData('propertyType', 'apartment')}
+                    className={cn("p-2 w-34 h-34 cursor-pointer hover:bg-gray-100 border rounded border-gray-300",
+                      formData.propertyType === 'apartment' && 'border-blue-500'
+                    )}>
+                    <Image src={ICONS.vaccume} className='w-full h-full' alt="Apartment" width={50} height={50} />
+                  </div>
+                </Tooltip>
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-2">Property Size (sq meters)</label>
+              <InputNumber
+                size='large'
+                value={formData.propertySize}
+                onChange={(value) => updateFormData('propertySize', value || 0)}
+                placeholder="Enter property size"
+                className="w-full!"
+                min={0}
+              />
+            </div>
+          </div>
+        )
+
+      case 2:
+        return (
+          <div className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium mb-2">Bedroom Quantity</label>
+              <InputNumber
+                value={formData.bedroomQuantity}
+                onChange={(value) => updateFormData('bedroomQuantity', value || 0)}
+                placeholder="Enter bedroom quantity"
+                className="w-full"
+                min={0}
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">Bathroom Quantity</label>
+              <InputNumber
+                value={formData.bathroomQuantity}
+                onChange={(value) => updateFormData('bathroomQuantity', value || 0)}
+                placeholder="Enter bathroom quantity"
+                className="w-full"
+                min={0}
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">Kitchen Quantity</label>
+              <InputNumber
+                value={formData.kitchenQuantity}
+                onChange={(value) => updateFormData('kitchenQuantity', value || 0)}
+                placeholder="Enter kitchen quantity"
+                className="w-full"
+                min={0}
+              />
+            </div>
+          </div>
+        )
+
+      case 3:
+        return (
+          <div className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium mb-2">Elevator</label>
+              <Switch
+                checked={formData.elevator}
+                onChange={(checked) => updateFormData('elevator', checked)}
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">In-person Key Handover</label>
+              <Switch
+                checked={formData.inPersonKeyHandover}
+                onChange={(checked) => updateFormData('inPersonKeyHandover', checked)}
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">Lockbox Details</label>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium mb-2">Keybox Location</label>
+                  <Input
+                    size='large' value={formData.keyboxLocation}
+                    onChange={(e) => updateFormData('keyboxLocation', e.target.value)}
+                    placeholder="Enter keybox location"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Lockbox Code</label>
+                  <Input
+                    size='large' value={formData.lockboxCode}
+                    onChange={(e) => updateFormData('lockboxCode', e.target.value)}
+                    placeholder="Enter lockbox code"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+
+      case 4:
+        return (
+          <div className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium mb-2">Property Description</label>
+              <TextArea
+                value={formData.description}
+                onChange={(e) => updateFormData('description', e.target.value)}
+                placeholder="Enter property description"
+                rows={6}
+              />
+            </div>
+          </div>
+        )
+
+      default:
+        return null
+    }
+  }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="container mx-auto">
-        <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-6">Add Properties</h1>
+    <div className="container mx-auto px-4 py-6">
+      <h1 className="text-3xl font-bold mb-8">Add New Property</h1>
 
-          {/* Property Title */}
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Property title
-            </label>
-            <Input
-              size="large"
-              value={formData.title}
-              onChange={(e) => handleInputChange('title', e.target.value)}
-              className="w-full"
-            />
-          </div>
+      <div className="bg-white p-6 rounded-lg shadow-md mb-6">
+        {renderStepContent()}
+      </div>
 
-          {/* Property Image */}
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Property image
-            </label>
-            <Upload
-              listType="picture-card"
-              onChange={handleImageUpload}
-              beforeUpload={() => false}
-              showUploadList={false}
-              className="w-full"
-            >
-              <div className="flex flex-col items-center justify-center h-32 rounded-lg">
-                <PlusOutlined className="text-2xl text-gray-400 mb-2" />
-                <div className="text-gray-500">Add photos</div>
-              </div>
-            </Upload>
-          </div>
+      <div className="flex justify-between">
+        <Button
+          onClick={prevStep}
+          disabled={currentStep === 0}
+          icon={<ArrowLeftOutlined />}
+        >
+          Previous
+        </Button>
 
-          {/* Property Type */}
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Property Type
-            </label>
-            <Radio.Group
-              value={formData.propertyType}
-              onChange={(e: RadioChangeEvent) => handleInputChange('propertyType', e.target.value)}
-              className="flex gap-4"
-            >
-              <Radio.Button value="apartment" className="flex-1 h-12 flex items-center justify-center">
-                <div className="flex items-center gap-2">
-                  <Building2 className="w-4 h-4" />
-                  <span>Apartment</span>
-                </div>
-              </Radio.Button>
-              <Radio.Button value="home" className="flex-1 h-12 flex items-center justify-center">
-                <div className="flex items-center gap-2">
-                  <Home className="w-4 h-4" />
-                  <span>Home</span>
-                </div>
-              </Radio.Button>
-            </Radio.Group>
-          </div>
-
-          {/* Floor and Apartment Number */}
-          <div className="grid grid-cols-2 gap-4 mb-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Floor</label>
-              <Select
-                size="large"
-                value={formData.floor}
-                onChange={(value) => handleInputChange('floor', value)}
-                className="w-full"
-                options={[
-                  { value: '1st', label: '1st' },
-                  { value: '2nd', label: '2nd' },
-                  { value: '3rd', label: '3rd' },
-                  { value: '4th', label: '4th' },
-                  { value: '5th', label: '5th' }
-                ]}
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Apartment Number
-              </label>
-              <Input
-                size="large"
-                value={formData.apartmentNumber}
-                onChange={(e) => handleInputChange('apartmentNumber', e.target.value)}
-                className="w-full"
-              />
-            </div>
-          </div>
-
-          {/* Elevator */}
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">Elevator</label>
-            <Radio.Group
-              value={formData.elevator}
-              onChange={(e: RadioChangeEvent) => handleInputChange('elevator', e.target.value)}
-              className="flex gap-4"
-            >
-              <Radio.Button value="yes" className="flex-1 h-12 flex items-center justify-center">
-                Yes
-              </Radio.Button>
-              <Radio.Button value="no" className="flex-1 h-12 flex items-center justify-center">
-                No
-              </Radio.Button>
-            </Radio.Group>
-          </div>
-
-          {/* Property size */}
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Property size
-            </label>
-            <div className="flex items-center">
-              <Input
-                size="large"
-                value={formData.propertySize}
-                onChange={(e) => handleInputChange('propertySize', e.target.value)}
-                className="w-full"
-                suffix={<span className="text-gray-500">m²</span>}
-              />
-            </div>
-          </div>
-
-          {/* Location */}
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
-            <Select
-              size="large"
-              value={formData.location}
-              onChange={(value) => handleInputChange('location', value)}
-              className="w-full"
-              options={[
-                { value: 'France', label: 'France' },
-                { value: 'Spain', label: 'Spain' },
-                { value: 'Italy', label: 'Italy' },
-                { value: 'Germany', label: 'Germany' }
-              ]}
-            />
-          </div>
-
-          {/* Room Counters */}
-          <div className="grid grid-cols-3 gap-4 mb-8">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Bedroom</label>
-              <div className="flex items-center gap-2">
-                <Button 
-                  type="default" 
-                  size="large" 
-                  onClick={() => handleInputChange('bedroom', Math.max(0, formData.bedroom - 1))}
-                  className="flex-1"
-                >
-                  -
-                </Button>
-                <InputNumber
-                  size="large"
-                  min={0}
-                  value={formData.bedroom}
-                  onChange={(value) => handleInputChange('bedroom', value || 0)}
-                  className="flex-1 text-center"
-                  controls={false}
-                />
-                <Button 
-                  type="default" 
-                  size="large" 
-                  onClick={() => handleInputChange('bedroom', formData.bedroom + 1)}
-                  className="flex-1"
-                >
-                  +
-                </Button>
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Bathroom</label>
-              <div className="flex items-center gap-2">
-                <Button 
-                  type="default" 
-                  size="large" 
-                  onClick={() => handleInputChange('bathroom', Math.max(0, formData.bathroom - 1))}
-                  className="flex-1"
-                >
-                  -
-                </Button>
-                <InputNumber
-                  size="large"
-                  min={0}
-                  value={formData.bathroom}
-                  onChange={(value) => handleInputChange('bathroom', value || 0)}
-                  className="flex-1 text-center"
-                  controls={false}
-                />
-                <Button 
-                  type="default" 
-                  size="large" 
-                  onClick={() => handleInputChange('bathroom', formData.bathroom + 1)}
-                  className="flex-1"
-                >
-                  +
-                </Button>
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Kitchen</label>
-              <div className="flex items-center gap-2">
-                <Button 
-                  type="default" 
-                  size="large" 
-                  onClick={() => handleInputChange('kitchen', Math.max(0, formData.kitchen - 1))}
-                  className="flex-1"
-                >
-                  -
-                </Button>
-                <InputNumber
-                  size="large"
-                  min={0}
-                  value={formData.kitchen}
-                  onChange={(value) => handleInputChange('kitchen', value || 0)}
-                  className="flex-1 text-center"
-                  controls={false}
-                />
-                <Button 
-                  type="default" 
-                  size="large" 
-                  onClick={() => handleInputChange('kitchen', formData.kitchen + 1)}
-                  className="flex-1"
-                >
-                  +
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-200 pt-6 mb-6">
-            {/* In-person key handover */}
-            <div className="mb-6">
-              <h3 className="font-medium text-gray-800 mb-3 flex items-center gap-2">
-                <Key className="w-4 h-4" />
-                In-person key handover
-              </h3>
-              <Input
-                placeholder="Meet the cleaner to give keys"
-                value={formData.keyHandoverDetails}
-                onChange={(e) => handleInputChange('keyHandoverDetails', e.target.value)}
-                className="w-full"
-              />
-            </div>
-
-            {/* Lockbox */}
-            <div className="mb-6">
-              <div className="flex items-center gap-2 mb-3">
-                <Lock className="w-4 h-4" />
-                <h3 className="font-medium text-gray-800">Lockbox</h3>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                <Checkbox
-                  checked={formData.keyHandoverType === 'lockbox'}
-                  onChange={(e) => handleInputChange('keyHandoverType', e.target.checked ? 'lockbox' : 'in-person')}
-                  className="mb-3 text-gray-700"
-                >
-                  Lockbox Code Released 24 Hours Before Mission
-                </Checkbox>
-                
-                {formData.keyHandoverType === 'lockbox' && (
-                  <div className="space-y-3">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Keybox Location
-                      </label>
-                      <Input
-                        placeholder="e.g. B. Berlin or"
-                        value={formData.keyboxLocation}
-                        onChange={(e) => handleInputChange('keyboxLocation', e.target.value)}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Lockbox Code
-                      </label>
-                      <Input
-                        placeholder="Lockbox Code"
-                        value={formData.lockboxCode}
-                        onChange={(e) => handleInputChange('lockboxCode', e.target.value)}
-                      />
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Checkboxes */}
-            <div className="space-y-3 mb-6">
-              <Checkbox
-                checked={formData.vacuumProvided}
-                onChange={(e) => handleInputChange('vacuumProvided', e.target.checked)}
-                className="text-gray-700"
-              >
-                Vacuum Provided
-              </Checkbox>
-              <br />
-              <Checkbox
-                checked={formData.suppliesProvided}
-                onChange={(e) => handleInputChange('suppliesProvided', e.target.checked)}
-                className="text-gray-700"
-              >
-                Supplies Provided
-              </Checkbox>
-            </div>
-          </div>
-
-          {/* Description */}
-          <div className="mb-8">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Description
-            </label>
-            <TextArea
-              rows={3}
-              value={formData.description}
-              onChange={(e) => handleInputChange('description', e.target.value)}
-              placeholder="Message"
-              className="w-full"
-            />
-          </div>
-
-          {/* Task Sections */}
-          <div className="space-y-8">
-            <TaskSection
-              title="General"
-              category="general"
-              tasks={formData.generalTasks}
-              customTaskValue={customTasks.general}
-              onAddTask={addCustomTask}
-              onDeleteTask={deleteTask}
-              onToggleTask={toggleTask}
-              onCustomTaskChange={handleCustomTaskChange}
-            />
-
-            <TaskSection
-              title="Bedroom(s)"
-              category="bedroom"
-              tasks={formData.bedroomTasks}
-              customTaskValue={customTasks.bedroom}
-              onAddTask={addCustomTask}
-              onDeleteTask={deleteTask}
-              onToggleTask={toggleTask}
-              onCustomTaskChange={handleCustomTaskChange}
-            />
-
-            <TaskSection
-              title="Bathroom / WC"
-              category="bathroom"
-              tasks={formData.bathroomTasks}
-              customTaskValue={customTasks.bathroom}
-              onAddTask={addCustomTask}
-              onDeleteTask={deleteTask}
-              onToggleTask={toggleTask}
-              onCustomTaskChange={handleCustomTaskChange}
-            />
-
-            <TaskSection
-              title="Kitchen / Kitchen Area"
-              category="kitchen"
-              tasks={formData.kitchenTasks}
-              customTaskValue={customTasks.kitchen}
-              onAddTask={addCustomTask}
-              onDeleteTask={deleteTask}
-              onToggleTask={toggleTask}
-              onCustomTaskChange={handleCustomTaskChange}
-            />
-          </div>
-
-          {/* Submit Button */}
-          <div className="mt-8">
-            <Button
-              type="primary"
-              size="large"
-              block
-              onClick={handleSubmit}
-              className="h-12 text-lg font-medium bg-black hover:bg-gray-800"
-            >
-              Create Now
-            </Button>
-          </div>
-        </div>
+        {currentStep === steps.length - 1 ? (
+          <Button
+            type="primary"
+            onClick={handleSubmit}
+            icon={<CheckOutlined />}
+          >
+            Submit
+          </Button>
+        ) : (
+          <Button
+            type="primary"
+            onClick={nextStep}
+            icon={<ArrowRightOutlined />}
+          >
+            Next
+          </Button>
+        )}
       </div>
     </div>
-  );
-};
-
-export default PropertyForm;
+  )
+}

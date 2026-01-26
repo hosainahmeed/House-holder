@@ -37,3 +37,24 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+.custom-shape-divider-top-1769417555 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1769417555 svg {
+    position: relative;
+    display: block;
+    width: calc(130% + 1.3px);
+    height: 166px;
+}
+
+.custom-shape-divider-top-1769417555 .shape-fill {
+    fill: #374A61;
+}
