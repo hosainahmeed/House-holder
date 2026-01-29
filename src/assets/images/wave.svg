@@ -1,6 +1,2 @@
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 226" width="1440" height="226">
-	<style>
-		.s0 { fill: #374a61 } 
-	</style>
-	<path class="s0" d="m0 192l40-26.7c40-26.3 120-80.3 200-80 80-0.3 160 53.7 240 58.7 80 5 160-37 240-26.7 80 10.7 160 74.7 240 96 80 21.7 160-0.3 240-32 80-32.3 160-74.3 200-96l40-21.3v-64h-40c-40 0-120 0-200 0q-120 0-240 0-120 0-240 0-120 0-240 0-120 0-240 0c-80 0-160 0-200 0h-40z"/>
-</svg>
+<?xml version="1.0" standalone="no"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" id="wave" style="transform:rotate(180deg); transition: 0.3s" viewBox="0 0 1440 320" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(40, 168, 225, 0)" offset="0%"/><stop stop-color="rgba(40, 168, 225, 0.59)" offset="100%"/></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,128L160,224L320,32L480,160L640,96L800,256L960,288L1120,192L1280,192L1440,0L1600,192L1760,288L1920,160L2080,128L2240,256L2400,192L2560,32L2720,256L2880,32L3040,0L3200,0L3360,160L3520,128L3680,96L3840,64L3840,320L3680,320L3520,320L3360,320L3200,320L3040,320L2880,320L2720,320L2560,320L2400,320L2240,320L2080,320L1920,320L1760,320L1600,320L1440,320L1280,320L1120,320L960,320L800,320L640,320L480,320L320,320L160,320L0,320Z"/></svg>

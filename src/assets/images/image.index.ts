@@ -16,13 +16,18 @@ import target from "./target.svg"
 import contact from "./contact.png"
 import calenderBigIcon from "./calender-big-icon.svg"
 import bedLinens from "./bed_linens.png"
-import bannerBack from "./banner-back.jpg"
+import bannerBack from "./banner2.png"
+// import bannerBack from "./banner-back.jpg"
 import wave from "./wave.svg"
 import stackedWavesHaikei from "./stacked-waves-haikei.svg"
 import mobileNotificationImage from "./mobile-notification.png"
 import mobileCostImage from "./mobile-cost.png"
 import cleaningIconsImage from "./cleaning-icons.png"
-
+import cleanerSvg from "./cleaner.svg"
+import recycleSvg from "./recycle.svg"
+import mobileNotificaionSvg from "./mobile-notificaion.svg"
+import appleD from "./apple-d.svg"
+import googleD from "./google-d.svg"
 export const IMAGE_CONSTANTS = {
     HERO_BG,
     hostImage,
@@ -47,5 +52,10 @@ export const IMAGE_CONSTANTS = {
     stackedWavesHaikei,
     mobileNotificationImage,
     mobileCostImage,
-    cleaningIconsImage
+    cleaningIconsImage,
+    cleanerSvg,
+    recycleSvg,
+    mobileNotificaionSvg,
+    appleD,
+    googleD
 } as const;

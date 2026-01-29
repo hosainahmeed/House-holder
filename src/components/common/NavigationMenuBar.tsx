@@ -29,8 +29,8 @@ export const profile: any = {
     name: 'Tanjim',
     email: 'tanjim@gmail.com',
     profile_image: 'https://placehold.co/600x400',
-    role: 'host',
-    user: true
+    role: '',
+    user: false
 }
 
 const LANGUAGES = [
@@ -132,7 +132,7 @@ export const NavigationMenuBar = () => {
 
     if (!profile?.user) {
         return (
-            <header className="sticky bg-[#28A8E1] top-0 left-0 right-0 z-20 px-4 sm:px-8 lg:px-16 py-4 sm:py-6">
+            <header className="sticky bg-[#40C4FF] top-0 left-0 right-0 z-20 px-4 sm:px-8 lg:px-16 py-4 sm:py-6">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
                     <div className="flex items-center gap-2">
                         <div className="w-8 h-8 sm:w-10 sm:h-10">

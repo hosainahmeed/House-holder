@@ -202,7 +202,7 @@ export default function AddPropertyPage() {
                 <Tooltip placement='bottomLeft' title="Apartment">
                   <div
                     onClick={() => updateFormData('propertyType', 'apartment')}
-                    className={cn("p-2 w-24 h-24 cursor-pointer hover:bg-gray-100 border rounded border-gray-300",
+                    className={cn("p-2 w-12 md:w-24 h-12 md:h-24 cursor-pointer hover:bg-gray-100 border rounded border-gray-300",
                       formData.propertyType === 'apartment' && 'border-blue-500'
                     )}>
                     <Image src={ICONS.apartment} className='w-full h-full' alt="Apartment" width={50} height={50} />
@@ -211,7 +211,7 @@ export default function AddPropertyPage() {
                 <Tooltip placement='bottomLeft' title="Home">
                   <div
                     onClick={() => updateFormData('propertyType', 'home')}
-                    className={cn("p-2 w-24 h-24 cursor-pointer hover:bg-gray-100 border rounded border-gray-300",
+                    className={cn("p-2 w-12 md:w-24 h-12 md:h-24 cursor-pointer hover:bg-gray-100 border rounded border-gray-300",
                       formData.propertyType === 'home' && 'border-blue-500'
                     )}>
                     <Image src={ICONS.mansion} className='w-full h-full' alt="Apartment" width={50} height={50} />
@@ -271,7 +271,7 @@ export default function AddPropertyPage() {
                 <Tooltip placement='bottomLeft' title="Vacuum Provided">
                   <div
                     onClick={() => updateFormData('providable', 'vacuum')}
-                    className={cn("p-2 w-34 h-34 cursor-pointer hover:bg-gray-100 border rounded border-gray-300",
+                    className={cn("p-2 w-12 md:w-24 h-12 md:h-24 cursor-pointer hover:bg-gray-100 border rounded border-gray-300",
                       formData.providable === 'vacuum' && 'border-blue-500'
                     )}>
                     <Image src={ICONS.supplies} className='w-full h-full' alt="Apartment" width={50} height={50} />
@@ -280,7 +280,7 @@ export default function AddPropertyPage() {
                 <Tooltip placement='bottomLeft' title="Supplies Provided">
                   <div
                     onClick={() => updateFormData('providable', 'supplies')}
-                    className={cn("p-2 w-34 h-34 cursor-pointer hover:bg-gray-100 border rounded border-gray-300",
+                    className={cn("p-2 w-12 md:w-24 h-12 md:h-24 cursor-pointer hover:bg-gray-100 border rounded border-gray-300",
                       formData.providable === 'supplies' && 'border-blue-500'
                     )}>
                     <Image src={ICONS.vaccume} className='w-full h-full' alt="Apartment" width={50} height={50} />
