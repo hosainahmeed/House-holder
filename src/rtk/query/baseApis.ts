@@ -1,0 +1,20 @@
+
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import Cookies from 'js-cookie';
+const baseApis = createApi({
+    reducerPath: 'api',
+    baseQuery: fetchBaseQuery({
+        baseUrl: "https://theo-mtbb.com/api",
+        prepareHeaders: (headers) => {
+            const token = Cookies.get('accessToken');
+            if (token) {
+                headers.set('Authorization', `Bearer ${token}`);
+            }
+            return headers;
+        },
+    }),
+    tagTypes: ['auth', 'profile', 'banner', 'product', 'category', 'subcategory', 'cart', 'shippingAddress', 'pickupAddress', 'order', 'privacyPolicy','termsAndConditions'],
+    endpoints: () => ({}),
+});
+
+export default baseApis;

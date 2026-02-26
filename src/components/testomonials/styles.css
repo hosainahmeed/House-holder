@@ -1,0 +1,6 @@
+.swiper-button-prev {
+  position: absolute;
+  top: 110%;
+  transform: translateY(-50%);
+}
+

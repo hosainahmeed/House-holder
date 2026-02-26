@@ -1,0 +1,276 @@
+{
+  "Common": {
+    "home": "Accueil",
+    "aboutUs": "À propos",
+    "contactUs": "Contactez-nous",
+    "contactUsDescription": "Notre mission est de simplifier la gestion des emplois, d'assurer des paiements sécurisés et d'aider les nettoyeurs indépendants à développer leur entreprise en toute confiance.",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "logout": "Déconnexion",
+    "submit": "Soumettre",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "search": "Rechercher",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "success": "Succès!",
+    "explore": "Explorer",
+    "join-as-host": "Rejoignez-nous en tant que nettoyeur",
+    "my_propertie": "Mes propriétés",
+    "create_cleaning_request": "Créer une demande de ménage",
+    "add_propertise": "Ajouter des propriétés",
+    "chambre": "Chambre",
+    "salleDeBain": "Salle de bain",
+    "bed": "Lit",
+    "bath": "Salle de bain",
+    "m2": "m²",
+    "bed_rooms": "Chambres à coucher",
+    "location": "Emplacement",
+    "contactEmail": "Email de contact",
+    "contactPhone": "Téléphone de contact"
+  },
+  "HomePage": {
+    "title": "Bienvenue sur AirHousehold",
+    "subtitle": "Connectez-vous avec des nettoyeurs professionnels",
+    "description": "Rejoignez une plateforme de confiance qui connecte les nettoyeurs professionnels avec des hôtes vérifiés.",
+    "getStarted": "Commencer",
+    "learnMore": "En savoir plus"
+  },
+  "AboutUs": {
+    "metaTitle": "À propos",
+    "metaDescription": "Notre mission est de simplifier la gestion des emplois, d'assurer des paiements sécurisés et d'aider les nettoyeurs indépendants à développer leur entreprise en toute confiance.",
+    "title": "À propos",
+    "description": "Notre mission est de simplifier la gestion des emplois, d'assurer des paiements sécurisés et d'aider les nettoyeurs indépendants à développer leur entreprise en toute confiance.",
+    "subtitle": "Simplifier la gestion de classe pour chaque CR",
+    "heading": "Quand les classes restent connectées, l'apprentissage devient plus fort.",
+    "intro1": "NOTRE CR est une plateforme intelligente basée sur le web conçue pour faciliter le travail de chaque Représentant de Classe. De la gestion des listes d'étudiants et des horaires de classe à la publication d'annonces, de devoirs et à la gestion des problèmes des étudiants — NOTRE CR rassemble tout dans un tableau de bord simple.",
+    "intro2": "Nous avons commencé avec un objectif clair : rendre la communication entre les CR et les étudiants rapide, transparente et organisée. Plus d'avis manqués, d'heures de classe confuses ou de mises à jour dispersées — NOTRE CR maintient votre monde académique connecté, d'un simple clic.",
+    "intro3": "NOTRE CR est une plateforme intelligente basée sur le web conçue pour faciliter le travail de chaque Représentant de Classe. De la gestion des listes d'étudiants et des horaires de classe à la publication d'annonces, de devoirs et à la gestion des problèmes des étudiants — NOTRE CR rassemble tout dans un tableau de bord simple.",
+    "missionTitle": "Notre Mission",
+    "missionDescription": "Notre mission est de connecter les nettoyeurs professionnels avec des hôtes vérifiés via une plateforme simple, sécurisée et transparente. Nous visons à rendre la gestion des emplois sans effort, assurer des paiements équitables et construire la confiance à chaque service terminé.",
+    "visionTitle": "Notre Vision",
+    "visionDescription": "Notre vision est de devenir une plateforme leader pour les services de nettoyage à la demande, permettant aux nettoyeurs indépendants de développer leur entreprise tout en fournissant aux hôtes des solutions de nettoyage fiables et de haute qualité dans le monde entier.",
+    "valuesTitle": "Nos Valeurs",
+    "valuesDescription": "Nous croyons à la confiance, à la transparence et au professionnalisme. Nous valorisons le travail équitable, les paiements sécurisés, une communication claire et le respect mutuel entre les nettoyeurs et les hôtes, assurant une expérience positive pour tous sur notre plateforme.",
+    "sectionTitle": "Mission, Vision & Valeurs",
+    "sectionDescription": "Notre mission est de connecter les nettoyeurs professionnels avec des hôtes vérifiés via une plateforme simple, sécurisée et transparente."
+  },
+  "Auth": {
+    "login": {
+      "title": "Connectez-vous à votre compte",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "forgotPassword": "Mot de passe oublié?",
+      "noAccount": "Vous n'avez pas de compte?",
+      "welcomeBack": "Content de te revoir!",
+      "loginDescription": "Veuillez entrer vos informations pour vous connecter à votre compte",
+      "signIn": "Se connecter",
+      "new_here": "Nouveau ici ?",
+      "email_placeholder": "Entrez votre adresse e-mail",
+      "password_placeholder": "Entrez votre mot de passe",
+      "new_account": " Créez un compte",
+      "show": "Afficher",
+      "hide": "Masquer"
+    },
+    "register": {
+      "title": "Créer un compte!",
+      "firstName": "Prénom",
+      "description": "Veuillez saisir vos informations pour créer un compte.",
+      "signUp": "S'inscrire",
+      "lastName": "Nom",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "haveAccount": "Vous avez déjà un compte?",
+      "name": "Nom",
+      "photo": "Photo",
+      "name_placeholder": "Veuillez entrer votre nom",
+      "confirm_password_placeholder": "Veuillez confirmer votre mot de passe"
+    }
+  },
+  "Navigation": {
+    "home": "Maison",
+    "dashboard": "Tableau de bord",
+    "properties": "Propriétés",
+    "calendar": "Calendrier",
+    "jobs": "Emplois",
+    "chat": "Chat",
+    "profile": "Profil",
+    "aboutUs": "À propos de nous",
+    "contactUs": "Contactez-nous",
+    "faq": "FAQ"
+  },
+  "LanguageSettings": {
+    "title": "Paramètres de langue",
+    "chooseLanguage": "Choisissez votre langue",
+    "languageDescription": "Sélectionnez votre langue préférée pour l'interface de l'application",
+    "english": "Anglais",
+    "french": "Français",
+    "languageChanged": "Langue changée en {language}",
+    "note": "Changer la langue mettra à jour tous les textes de l'application. Il se peut que certains contenus nécessitent un rafraîchissement de la page pour s'afficher dans la langue sélectionnée."
+  },
+  "Footer": {
+    "contactUs": "Contactez-nous",
+    "description": "Donner aux parents, aux tuteurs et aux élèves les moyens d'agir grâce à une plateforme d'apprentissage intelligente et transparente",
+    "address": "111 Mohakhali, Dhaka, DH 1515, Bangladesh.",
+    "email": "bdcalling@gmail.com",
+    "phone": "+88015-88888-9999",
+    "account": "Compte",
+    "myAccount": "Mon Compte",
+    "loginRegister": "Connexion / Inscription",
+    "quickLinks": "Liens Rapides",
+    "aboutUs": "À propos",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsConditions": "Conditions générales",
+    "faq": "FAQ",
+    "copyright": "© {year} Votre Nom d'Entreprise. Tous droits réservés.",
+    "support": "soutien"
+  },
+  "banner": {
+    "title": "TRANSFORMEZ VOS COMPÉTENCES EN NETTOYAGE EN UN REVENU FIABLE",
+    "description": "Rejoignez une plateforme de confiance qui met en relation des professionnels du nettoyage avec des hôtes vérifiés. Choisissez des missions près de chez vous, gérez votre emploi du temps et recevez des paiements sécurisés après chaque mission accomplie.",
+    "subtitle": "Trouvez des missions de nettoyage près de chez vous. Recevez des paiements sécurisés."
+  },
+  "clinet-word": {
+    "subtitle": "Trouvez des missions de nettoyage près de chez vous",
+    "title": "Rencontrez nos agents de nettoyage",
+    "description": "Trouvez des missions de nettoyage à proximité, gérez vos disponibilités et recevez des paiements sécurisés après avoir accompli les tâches."
+  },
+  "why-choose": {
+    "title": "Pourquoi choisir notre plateforme en tant qu’agent de nettoyage ?",
+    "target": "Plateforme pour les agents de nettoyage ?",
+    "description": "De la planification des missions à la communication avec les clients, notre plateforme donne aux agents de nettoyage tous les outils nécessaires pour tout gérer facilement — depuis un tableau de bord simple et intuitif. Restez organisé, restez connecté et concentrez-vous sur l’essentiel : votre travail."
+  },
+  "features": {
+    "nearby_jobs": {
+      "title": "Trouvez des missions de nettoyage à proximité",
+      "description": "Parcourez les missions de nettoyage disponibles près de chez vous et choisissez celles qui correspondent à votre emploi du temps et à vos préférences."
+    },
+    "weekly_schedule": {
+      "title": "Planning hebdomadaire professionnel",
+      "description": "Gérez vos disponibilités grâce à un calendrier hebdomadaire clair, conçu spécialement pour les agents de nettoyage — sans chevauchement, sans confusion."
+    },
+    "secure_payments": {
+      "title": "Paiements sécurisés et automatiques",
+      "description": "Recevez vos paiements en toute sécurité via notre système de paiement sécurisé une fois le travail terminé et approuvé — sans espèces, sans retard."
+    },
+    "job_validation": {
+      "title": "Validation de mission facile",
+      "description": "Téléchargez des photos et complétez une simple liste de contrôle pour valider votre travail et débloquer rapidement votre paiement."
+    },
+    "reputation": {
+      "title": "Développez votre réputation",
+      "description": "Recevez des notes et des avis des hôtes après chaque mission terminée et développez votre profil à chaque réussite."
+    },
+    "communication": {
+      "title": "Communication directe avec les hôtes",
+      "description": "Discutez en toute sécurité avec les hôtes pour les missions confirmées afin de clarifier les détails, partager des mises à jour et éviter les malentendus."
+    }
+  },
+  "join-section": {
+    "title": "Commencez à gagner de l'argent avec des emplois de nettoyage près de chez vous",
+    "subtitle": "Rejoignez les centaines de professionnels du nettoyage qui font confiance à notre plateforme pour trouver des missions de nettoyage fiables, gérer leur emploi du temps et recevoir des paiements sécurisés, le tout dans un système simple et organisé."
+  },
+  "cleaners-in-numbers": {
+    "title": "Nos agents en",
+    "title_highlight": "chiffres",
+    "description": "Nous sommes fiers de notre réseau d'agents d'entretien professionnels qui offrent un service exceptionnel. Notre engagement envers la qualité et la fiabilité se reflète dans notre communauté grandissante.",
+    "cta": "En savoir plus",
+    "stats": {
+      "verified": {
+        "label": "Agents vérifiés",
+        "description": "Agents professionnels vérifiés avec pièce d'identité et documents officiels."
+      },
+      "completed": {
+        "label": "Missions terminées",
+        "description": "Missions de nettoyage réussies avec validation photo et approbation de l'hôte."
+      },
+      "rating": {
+        "label": "Note moyenne",
+        "description": "Score de satisfaction élevé basé sur les avis réels des hôtes vérifiés."
+      },
+      "payments": {
+        "label": "Paiements sécurisés",
+        "description": "Tous les paiements sont sécurisés et débloqués après validation du travail."
+      }
+    }
+  },
+  "app_download": {
+    "title": "Téléchargez notre application sur le Play Store et profitez d’une manière plus rapide et plus intelligente de gérer les services de nettoyage.",
+    "subtitle": "Gérez vos services de nettoyage à tout moment et en tout lieu. Téléchargez notre application depuis le Play Store pour réserver des services, suivre vos demandes, communiquer avec les agents de nettoyage et recevoir des mises à jour en temps réel — directement depuis votre appareil mobile."
+  },
+  "user-says": {
+    "title": "Ce que disent nos utilisateurs",
+    "target": "Utilisateurs",
+    "description": "Découvrez comment les hôtes et les nettoyeurs professionnels utilisent notre plateforme pour simplifier la planification, garantir un service fiable et profiter de paiements sécurisés et sans stress."
+  },
+  "menu": {
+    "host": {
+      "my_properties": "Mes propriétés",
+      "messages": "Messages",
+      "profile_settings": "Mon profil et paramètres",
+      "favorite_cleaner": "Agents de nettoyage favoris",
+      "transactions": "Transactions"
+    },
+    "cleaner": {
+      "my_jobs": "Mes missions",
+      "messages": "Messages",
+      "profile_settings": "Mon profil et paramètres",
+      "rating_review": "Notes et avis",
+      "my_income": "Mes revenus"
+    }
+  },
+  "my-profile-setting": {
+    "profile_and_account_settings": "Paramètres du profil et du compte",
+    "profile_info": "Informations du profil",
+    "identity_verification": "Vérification d'identité",
+    "legal_notices": "Notices légales",
+    "payment_and_translation": "Paiements et traductions",
+    "language": "Langue",
+    "change_password": "Modifier le mot de passe",
+    "delete_account": "Supprimer le compte"
+  },
+   "DeleteAccount": {
+    "title": "Delete Account",
+    "warningTitle": "Warning: This action is permanent and cannot be undone!",
+    "warningText": "Once you delete your account, all your data will be permanently removed from our servers.",
+    "whatWillBeDeleted": "What will be deleted:",
+    "deletedItems": [
+      "Your profile information and personal data",
+      "All your saved preferences and settings",
+      "Your account history and activity",
+      "Access to all services associated with this account",
+      "Any uploaded files and documents"
+    ],
+    "confirmDeletion": {
+      "title": "Confirm Account Deletion",
+      "description": "To proceed with deleting your account, please enter your current password below.",
+      "passwordLabel": "Current Password",
+      "passwordPlaceholder": "Enter your current password",
+      "confirmationText": "I understand that deleting my account is permanent and all my data will be lost forever",
+      "deleteButton": "Delete Account"
+    },
+    "alternatives": {
+      "title": "Looking for alternatives?",
+      "description": "Before you delete your account, consider these options:",
+      "options": [
+        "Temporarily deactivate your account instead",
+        "Update your privacy settings",
+        "Contact our support team if you're having issues"
+      ]
+    },
+    "confirmationModal": {
+      "title": "Final Confirmation",
+      "message": "Are you absolutely sure you want to delete your account? This action cannot be reversed.",
+      "confirmButton": "Yes, Delete My Account",
+      "cancelButton": "Cancel",
+      "successMessage": "Your account has been successfully deleted"
+    },
+    "sorryToSeeYouGo": "We're sorry to see you go. Please read the information below carefully.",
+    "passwordRequired": "Please enter your password to confirm deletion",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "confirmationRequired": "You must confirm to proceed"
+  }
+}
