@@ -1,0 +1,274 @@
+{
+  "Common": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "contactUsDescription": "Our mission is to simplify job management, ensure secure payments, and help independent cleaners grow their business with confidence.",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!",
+    "explore": "Explore",
+    "join-as-host": "Join as Host",
+    "my_propertie": "My Properties",
+    "create_cleaning_request": "Create Cleaning Request",
+    "add_propertise": "Add Properties",
+    "bed": "Bed",
+    "bath": "Bath",
+    "m2": "Sqft",
+    "bed_rooms": "Bedrooms",
+    "location": "Location",
+    "contactEmail": "Contact Email",
+    "contactPhone": "Contact Phone"
+  },
+  "HomePage": {
+    "title": "Welcome to AirHousehold",
+    "subtitle": "Connect with professional cleaners",
+    "description": "Join a trusted platform that connects professional cleaners with verified hosts.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "AboutUs": {
+    "metaTitle": "About Us",
+    "metaDescription": "Our mission is to simplify job management, ensure secure payments, and help independent cleaners grow their business with confidence.",
+    "title": "About Us",
+    "description": "Our mission is to simplify job management, ensure secure payments, and help independent cleaners grow their business with confidence.",
+    "subtitle": "Simplifying Classroom Management for Every CR",
+    "heading": "When classes stay connected, learning becomes stronger.",
+    "intro1": "OUR CR is a smart, web-based platform built to make every Class Representative's job easier. From managing student lists and class schedules to posting announcements, assignments, and handling student issues — OUR CR brings everything together in one simple dashboard.",
+    "intro2": "We started with one clear goal: to make communication between CRs and students fast, transparent, and organized. No more missing notices, confusing class times, or scattered updates — OUR CR keeps your academic world connected, one click at a time.",
+    "intro3": "OUR CR is a smart, web-based platform built to make every Class Representative's job easier. From managing student lists and class schedules to posting announcements, assignments, and handling student issues — OUR CR brings everything together in one simple dashboard.",
+    "missionTitle": "Our Mission",
+    "missionDescription": "Our mission is to connect professional cleaners with verified hosts through a simple, secure, and transparent platform. We aim to make job management effortless, ensure fair payments, and build trust on every completed service.",
+    "visionTitle": "Our Vision",
+    "visionDescription": "Our vision is to become a leading platform for on-demand cleaning services, empowering independent cleaners to grow their business while providing hosts with reliable, high-quality cleaning solutions worldwide.",
+    "valuesTitle": "Our Values",
+    "valuesDescription": "We believe in trust, transparency, and professionalism. We value fair work, secure payments, clear communication, and mutual respect between cleaners and hosts, ensuring a positive experience for everyone on our platform.",
+    "sectionTitle": "Mission, Vision & Values",
+    "sectionDescription": "Our mission is to connect professional cleaners with verified hosts through a simple, secure, and transparent platform."
+  },
+  "Auth": {
+    "login": {
+      "title": "Login to your account",
+      "email": "Email",
+      "password": "Password",
+      "email_placeholder": "Enter your email address",
+      "password_placeholder": "Enter your password",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "signIn": "Sign in",
+      "welcomeBack": "Welcome Back!",
+      "loginDescription": "Please enter your information to sign in to your account",
+      "new_here": "New here?",
+      "new_account": "Create a new account",
+      "show": "Show",
+      "hide": "Hide"
+    },
+    "register": {
+      "title": "Create an account!",
+      "description":"Please enter your information to create account",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "haveAccount": "Already have an account?",
+      "signUp": "Sign up",
+      "name":"Name",
+      "photo":"Photo",
+      "name_placeholder" : "Please enter your name",
+      "confirm_password_placeholder":"Please confirm your password"
+    }
+  },
+  "Navigation": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "properties": "Properties",
+    "calendar": "Calendar",
+    "jobs": "Jobs",
+    "chat": "Chat",
+    "profile": "Profile",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "faq": "FAQ"
+  },
+  "LanguageSettings": {
+    "title": "Language Settings",
+    "chooseLanguage": "Choose Your Language",
+    "languageDescription": "Select your preferred language for the application interface",
+    "english": "English",
+    "french": "French",
+    "languageChanged": "Language changed to {language}",
+    "note": "Changing the language will update all text throughout the application. Some content may require a page refresh to display in the selected language."
+  },
+  "Footer": {
+    "contactUs": "Contact Us",
+    "address": "111 Mohakhali, Dhaka, DH 1515, Bangladesh.",
+    "email": "bdcalling@gmail.com",
+    "description": "Empowering parents, guardians, and students through a smart and transparent learning platform",
+    "phone": "+88015-88888-9999",
+    "account": "Account",
+    "myAccount": "My Account",
+    "loginRegister": "Login / Register",
+    "quickLinks": "Quick Links",
+    "aboutUs": "About Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions",
+    "faq": "FAQ",
+    "copyright": "© {year} Your Company Name. All rights reserved.",
+    "support": "Support"
+  },
+  "banner": {
+    "title": "TURN YOUR CLEANING SKILLS INTO RELIABLE INCOME",
+    "description": "Join a trusted platform that connects professional cleaners with verified hosts. Choose jobs near you, manage your schedule, and receive secure payments after every completed mission.",
+    "subtitle": "Find Cleaning Jobs Near You. Get Paid Securely."
+  },
+  "clinet-word": {
+    "subtitle": "Find Cleaning Jobs Near You",
+    "title": "Meet Our Cleaner",
+    "description": "Find nearby cleaning jobs, manage your availability, and receive secure payments after completing tasks."
+  },
+  "why-choose": {
+    "title": "Why Choose Our Platform as a Cleaner?",
+    "target": "Platform as a Cleaner?",
+    "description": "From scheduling jobs to communicating with clients, our platform gives cleaning staff all the tools they need to manage everything easily—from a simple and intuitive dashboard. Stay organized, stay connected, and focus on what matters most: your work."
+  },
+  "join-section": {
+    "title": "Start Earning with Cleaning Jobs Near You",
+    "subtitle": "Join hundreds of professional cleaners who trust our platform to find reliable cleaning jobs, manage their schedule, and receive secure payments — all in one simple and organized system."
+  },
+  "features": {
+    "nearby_jobs": {
+      "title": "Find Nearby Cleaning Jobs",
+      "description": "Browse available cleaning missions near your location and choose the ones that fit your schedule and preferences."
+    },
+    "weekly_schedule": {
+      "title": "Professional Weekly Schedule",
+      "description": "Manage your availability with a clear weekly calendar designed specifically for cleaners — no overlap, no confusion."
+    },
+    "secure_payments": {
+      "title": "Secure & Automatic Payments",
+      "description": "Get paid safely through our secure payment system once your job is completed and approved — no cash, no delays."
+    },
+    "job_validation": {
+      "title": "Easy Job Validation",
+      "description": "Upload photos and complete a simple checklist to validate your work and release your payment quickly."
+    },
+    "reputation": {
+      "title": "Build Your Reputation",
+      "description": "Receive ratings and reviews from hosts after each completed job and grow your profile with every successful mission."
+    },
+    "communication": {
+      "title": "Direct Host Communication",
+      "description": "Chat securely with hosts for confirmed jobs to clarify details, share updates, and avoid misunderstandings."
+    }
+  },
+  "DeleteAccount": {
+    "title": "Delete Account",
+    "warningTitle": "Warning: This action is permanent and cannot be undone!",
+    "warningText": "Once you delete your account, all your data will be permanently removed from our servers.",
+    "whatWillBeDeleted": "What will be deleted:",
+    "deletedItems": [
+      "Your profile information and personal data",
+      "All your saved preferences and settings",
+      "Your account history and activity",
+      "Access to all services associated with this account",
+      "Any uploaded files and documents"
+    ],
+    "confirmDeletion": {
+      "title": "Confirm Account Deletion",
+      "description": "To proceed with deleting your account, please enter your current password below.",
+      "passwordLabel": "Current Password",
+      "passwordPlaceholder": "Enter your current password",
+      "confirmationText": "I understand that deleting my account is permanent and all my data will be lost forever",
+      "deleteButton": "Delete Account"
+    },
+    "alternatives": {
+      "title": "Looking for alternatives?",
+      "description": "Before you delete your account, consider these options:",
+      "options": [
+        "Temporarily deactivate your account instead",
+        "Update your privacy settings",
+        "Contact our support team if you're having issues"
+      ]
+    },
+    "confirmationModal": {
+      "title": "Final Confirmation",
+      "message": "Are you absolutely sure you want to delete your account? This action cannot be reversed.",
+      "confirmButton": "Yes, Delete My Account",
+      "cancelButton": "Cancel",
+      "successMessage": "Your account has been successfully deleted"
+    },
+    "sorryToSeeYouGo": "We're sorry to see you go. Please read the information below carefully.",
+    "passwordRequired": "Please enter your password to confirm deletion",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "confirmationRequired": "You must confirm to proceed"
+  },
+  "cleaners-in-numbers": {
+    "title": "Our Cleaners In",
+    "title_highlight": "Numbers",
+    "description": "We take pride in our network of professional cleaners who deliver exceptional service to our valued customers. Our commitment to quality and reliability is reflected in our growing community and the trust we've built.",
+    "cta": "Learn More",
+    "stats": {
+      "verified": {
+        "label": "Verified Cleaners",
+        "description": "Professional cleaners verified with ID and business documents, ready to accept jobs."
+      },
+      "completed": {
+        "label": "Cleaning Jobs Completed",
+        "description": "Successfully completed cleaning missions with photo validation and host approval."
+      },
+      "rating": {
+        "label": "Average Cleaner Rating",
+        "description": "High satisfaction score based on real reviews from verified hosts."
+      },
+      "payments": {
+        "label": "Secure Payments",
+        "description": "All payments are processed securely and released only after job validation."
+      }
+    }
+  },
+  "app_download": {
+    "title": "Download our app from the Play Store and enjoy a faster, smarter way to manage cleaning services.",
+    "subtitle": "Manage your cleanings anytime, anywhere. Download our app from the Play Store to book services, track requests, communicate with cleaners, and receive real-time updates — all from your mobile device."
+  },
+  "user-says": {
+    "title": "What Our Users Say",
+    "target": "Users Say",
+    "description": "Discover how hosts and professional cleaners use our platform to simplify scheduling, ensure reliable service, and enjoy secure, stress-free payments."
+  },
+  "menu": {
+    "host": {
+      "my_properties": "My Properties",
+      "messages": "Messages",
+      "profile_settings": "My Profile & Settings",
+      "favorite_cleaner": "Favorite Cleaners",
+      "transactions": "Transactions"
+    },
+    "cleaner": {
+      "my_jobs": "My Jobs",
+      "messages": "Messages",
+      "profile_settings": "My Profile & Settings",
+      "rating_review": "Ratings & Reviews",
+      "my_income": "My Income"
+    }
+  },
+  "my-profile-setting":{
+    "profile_and_account_settings": "Profile & Account Settings",
+    "profile_info": "Profile Info",
+    "identity_verification": "Identity Verification",
+    "legal_notices": "Legal Notices",
+    "payment_and_translation": "Payment & Translation",
+    "language": "Language",
+    "change_password": "Change Password",
+    "delete_account": "Delete Account"
+  }
+}
