@@ -1,0 +1,38 @@
+/* typography-responsive.css */
+@layer utilities {
+  /* Improved responsive line-height */
+  .responsive-leading {
+    line-height: calc(1em + 0.5rem);
+  }
+  
+  /* Better text rendering on high-DPI screens */
+  .typography {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Prevent text size adjustment on orientation change */
+  .text-size-adjust-100 {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  /* Responsive letter spacing */
+  .tracking-responsive {
+    letter-spacing: -0.01em;
+  }
+  
+  @media (min-width: 640px) {
+    .tracking-responsive {
+      letter-spacing: -0.02em;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .tracking-responsive {
+      letter-spacing: -0.03em;
+    }
+  }
+}
